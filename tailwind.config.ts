@@ -27,6 +27,13 @@ const config: Config = {
                 s10: "36px",
                 s11: "40px",
                 s12: "56px"
+            },
+            screens: {
+                xs: "520px",
+                sm: "768px",
+                md: "1024px",
+                lg: "1280px",
+                xl: "1640px"
             }
         }
     },
