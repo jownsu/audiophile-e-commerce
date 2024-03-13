@@ -2,6 +2,8 @@ import { Container, Flex } from "@radix-ui/themes";
 import MobileNav from "./MobileNav";
 import NavLinks from "./NavLinks";
 import Cart from "./Cart";
+import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
     return (
@@ -17,7 +19,16 @@ const Navbar = () => {
                     className="border-b border-white border-opacity-10 "
                 >
                     <MobileNav />
-                    <img src="images/icon/logo.svg" alt="audiophile icon" />
+                    <Link href="/">
+                        <Image
+                            src="images/icon/logo.svg"
+                            alt="audiophile icon"
+                            height={25}
+                            width={143}
+                            className="object-contain"
+                        />{" "}
+                    </Link>
+
                     <NavLinks className="hidden sm:flex sm:gap-x-5" />
                     <Cart />
                 </Flex>
