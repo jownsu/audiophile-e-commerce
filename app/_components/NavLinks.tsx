@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-const NavLinks = () => {
+const NavLinks = ({ className }: { className?: string }) => {
     return (
-        <ul className="hidden sm:flex">
+        <ul className={className}>
             {LINKS.map((link) => (
-                <li key={link.href} className="px-3">
+                <li key={link.href} className="">
                     <Link
-                        className="text-s2 font-bold  uppercase tracking-widest text-white duration-200 hover:text-primary"
+                        className="text-s2 font-semibold  uppercase tracking-widest text-white duration-200 hover:text-primary"
                         href={link.href}
                     >
                         {link.label}

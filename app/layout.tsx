@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Container, Theme } from "@radix-ui/themes";
 import Navbar from "./_components/Navbar";
+import Footer from "./_components/Footer";
 
 const manrope = Manrope({
     subsets: ["latin"],
@@ -21,12 +22,13 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={manrope.className}>
-            <body className="min-h-screen bg-neutral-500">
+            <body className="min-h-screen bg-neutral-50">
                 <Theme>
                     <Navbar />
                     <Container>
-                        <main>{children}</main>
+                        <main className="h-screen">{children}</main>
                     </Container>
+                    <Footer />
                 </Theme>
             </body>
         </html>

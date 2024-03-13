@@ -18,7 +18,7 @@ const Navbar = () => {
                 >
                     <MobileNav />
                     <img src="images/icon/logo.svg" alt="audiophile icon" />
-                    <NavLinks />
+                    <NavLinks className="hidden sm:flex sm:gap-x-5" />
                     <Cart />
                 </Flex>
             </Container>
