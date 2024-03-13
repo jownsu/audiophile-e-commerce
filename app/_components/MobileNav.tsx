@@ -7,7 +7,7 @@ const MobileNav = () => {
     const [showNav, setShowNav] = useState(false);
 
     return (
-        <div className="block sm:hidden">
+        <div className="block md:hidden">
             <button onClick={() => setShowNav(!showNav)}>
                 <img
                     src="images/icon/icon-hamburger.svg"
@@ -15,7 +15,7 @@ const MobileNav = () => {
                 />
             </button>
             {showNav && (
-                <div className="absolute left-0 top-full h-screen w-full bg-black bg-opacity-50">
+                <div className="absolute left-0 top-full z-30 h-screen w-full bg-black bg-opacity-50">
                     <AudioCategories />
                 </div>
             )}

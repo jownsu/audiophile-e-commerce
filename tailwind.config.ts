@@ -34,6 +34,10 @@ const config: Config = {
                 md: "1024px",
                 lg: "1280px",
                 xl: "1640px"
+            },
+            backgroundImage: {
+                hero: "url(/images/header.jpg)",
+                lg_hero: "url(/images/lg-header.jpg)"
             }
         }
     },
