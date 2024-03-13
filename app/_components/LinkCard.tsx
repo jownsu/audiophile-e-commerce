@@ -7,27 +7,27 @@ interface Props {
 
 const LinkCard = ({ link }: Props) => {
     return (
-        <Box className="relative flex flex-col items-center rounded-md bg-grey p-3 pt-20">
+        <Link
+            className="group relative flex h-[165px] flex-col items-center justify-end rounded-md bg-grey p-[22px] md:h-[204px]"
+            href={link.href}
+        >
             <img
                 src={link.image}
                 alt={`Picture of ${link.label}`}
-                className="absolute -top-1/3 w-32"
+                className="absolute top-[-35%] w-[140px] object-contain md:w-[215px]"
             />
-            <Text className="mb-2 text-s4 font-bold uppercase">
+            <Text className="mb-2 text-s4 font-semibold uppercase text-black md:text-s5">
                 {link.label}
             </Text>
-            <Link
-                href={link.href}
-                className="flex items-center gap-3 text-s2 font-bold text-black text-opacity-50"
-            >
+            <Text className="flex items-center gap-3 text-s2 font-semibold text-black text-opacity-50 duration-200 group-hover:text-primary">
                 SHOP{" "}
                 <img
                     src="images/icon/icon-arrow-right.svg"
                     alt="right icon"
                     className="inline-block"
                 />
-            </Link>
-        </Box>
+            </Text>
+        </Link>
     );
 };
 

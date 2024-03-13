@@ -1,13 +1,36 @@
+"use client";
+
 import { Container, Flex } from "@radix-ui/themes";
 import MobileNav from "./MobileNav";
 import NavLinks from "./NavLinks";
 import Cart from "./Cart";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <nav className="absolute top-0 z-50 w-full bg-transparent">
+        <nav
+            className={`fixed top-0 z-50 w-full duration-200 ${scrolled ? "bg-black" : "bg-transparent"}`}
+        >
             <Container px="5">
                 <Flex
                     justify={{

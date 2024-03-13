@@ -16,7 +16,9 @@ const MobileNav = () => {
             </button>
             {showNav && (
                 <div className="absolute left-0 top-full z-30 h-screen w-full bg-black bg-opacity-50">
-                    <AudioCategories />
+                    <div className="rounded-b-md bg-white px-5">
+                        <AudioCategories />
+                    </div>
                 </div>
             )}
         </div>
