@@ -38,46 +38,61 @@ export default function Home() {
                     </Flex>
                 </Container>
             </section>
-            <Container
-                px="5"
-                className="pb-[72px] pt-[110px] sm:pb-[48px] md:pb-[120px]"
-            >
-                <AudioCategories />
-            </Container>
-
             <Container px="5">
-                <Flex
-                    direction={{
-                        initial: "column",
-                        md: "row"
-                    }}
-                    align={{
-                        initial: "center"
-                    }}
-                    justify={{
-                        initial: "center",
-                        md: "between"
-                    }}
-                    className="my-5 overflow-hidden rounded-md bg-primary bg-circle_pattern bg-cover bg-[center_top_-130px] bg-no-repeat px-7 pb-[55px] pt-[62px] sm:pb-[64px] md:bg-[length:75%] md:bg-[position:-25%_10%] md:pb-0 md:pl-[138px] md:pr-[122px]"
-                >
-                    <img
-                        src="/images/speaker-zx9.png"
-                        alt="Speaker"
-                        className="mb-[40px] w-[172px] sm:mb-[68px] sm:w-[180px] md:mb-0 md:w-[380px] md:translate-y-4"
-                    />
-                    <div className="text-center text-white md:text-start">
-                        <p className="mx-auto mb-[28px] max-w-[220px] text-center text-s10 font-semibold uppercase leading-none tracking-wider sm:max-w-[270px] sm:text-s12 md:mx-0 md:text-start">
-                            ZX9 Speaker
+                <section className="pb-[72px] pt-[110px] sm:pb-[48px] md:pb-[120px]">
+                    <AudioCategories />
+                </section>
+
+                <section>
+                    <Flex
+                        direction={{
+                            initial: "column",
+                            md: "row"
+                        }}
+                        align={{
+                            initial: "center"
+                        }}
+                        justify={{
+                            initial: "center",
+                            md: "between"
+                        }}
+                        className="my-5 overflow-hidden rounded-md bg-primary bg-circle_pattern bg-cover bg-[center_top_-130px] bg-no-repeat px-7 pb-[55px] pt-[62px] sm:pb-[64px] md:bg-[length:75%] md:bg-[position:-25%_10%] md:pb-0 md:pl-[138px] md:pr-[122px]"
+                    >
+                        <img
+                            src="/images/speaker-zx9.png"
+                            alt="Speaker"
+                            className="mb-[40px] w-[172px] sm:mb-[68px] sm:w-[180px] md:mb-0 md:w-[380px] md:translate-y-4"
+                        />
+                        <div className="text-center text-white md:text-start">
+                            <p className="mx-auto mb-[28px] max-w-[220px] text-center text-s10 font-semibold uppercase leading-none tracking-wider sm:max-w-[270px] sm:text-s12 md:mx-0 md:text-start">
+                                ZX9 Speaker
+                            </p>
+                            <p className="mb-[26px] text-s4 opacity-75 sm:mb-[42px] sm:max-w-[350px]">
+                                Upgrade to premium speakers that are
+                                phenomenally built to deliver truly remarkable
+                                sound.
+                            </p>
+                            <Link href="/" className="btn btn_secondary">
+                                See Product
+                            </Link>
+                        </div>
+                    </Flex>
+                </section>
+
+                <section>
+                    <Flex
+                        direction="column"
+                        justify="center"
+                        className="h-[320px] rounded-md bg-[url('/images/speaker-zx7.jpg')] bg-cover bg-center bg-no-repeat px-[26px] sm:bg-[url('/images/sm-speaker-zx7.jpg')] sm:px-[63px] md:bg-[url('/images/md-speaker-zx7.jpg')] md:px-[96px]"
+                    >
+                        <p className="mb-[30px] text-s8 font-semibold uppercase tracking-wide">
+                            ZX7 Speaker
                         </p>
-                        <p className="mb-[26px] text-s4 opacity-75 sm:mb-[42px] sm:max-w-[350px]">
-                            Upgrade to premium speakers that are phenomenally
-                            built to deliver truly remarkable sound.
-                        </p>
-                        <Link href="/" className="btn btn_secondary">
+                        <Link href="/" className="btn btn_outline">
                             See Product
                         </Link>
-                    </div>
-                </Flex>
+                    </Flex>
+                </section>
             </Container>
         </div>
     );
