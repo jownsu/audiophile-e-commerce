@@ -15,7 +15,7 @@
 
 @layer components {
     .btn {
-        @apply inline-block px-8 py-3 text-s2 font-semibold uppercase tracking-wider duration-200;
+        @apply inline-block w-fit px-8 py-3 text-s2 font-semibold uppercase tracking-wider duration-200;
     }
 
     .btn_primary {
@@ -23,6 +23,6 @@
     }
 
     .btn_secondary {
-        @apply hover:bg-dark_grey bg-black;
+        @apply bg-black text-white hover:bg-dark_grey;
     }
 }

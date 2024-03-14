@@ -38,7 +38,8 @@ const config: Config = {
             },
             backgroundImage: {
                 hero: "url(/images/header.jpg)",
-                lg_hero: "url(/images/lg-header.jpg)"
+                lg_hero: "url(/images/lg-header.jpg)",
+                circle_pattern: "url(/images/pattern-circles.svg)"
             }
         }
     },
