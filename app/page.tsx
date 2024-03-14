@@ -32,10 +32,7 @@ export default function Home() {
                             build quality made for the passionate music
                             enthusiast.
                         </p>
-                        <Link
-                            href="/"
-                            className="inline-block bg-primary px-8 py-3 text-s2 font-semibold uppercase tracking-wider"
-                        >
+                        <Link href="/" className="btn btn_primary">
                             See Product
                         </Link>
                     </Flex>

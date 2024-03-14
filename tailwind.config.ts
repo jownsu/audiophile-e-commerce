@@ -12,7 +12,8 @@ const config: Config = {
                 primary: "#D87D4A",
                 primary_light: "#FBAF85",
                 dark: "#101010",
-                grey: "#F1F1F1"
+                grey: "#F1F1F1",
+                dark_grey: "#4C4C4C"
             },
             fontSize: {
                 s1: "12px",

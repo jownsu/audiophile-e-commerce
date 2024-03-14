@@ -12,3 +12,17 @@
         text-wrap: balance;
     }
 }
+
+@layer components {
+    .btn {
+        @apply inline-block px-8 py-3 text-s2 font-semibold uppercase tracking-wider duration-200;
+    }
+
+    .btn_primary {
+        @apply bg-primary hover:bg-primary_light;
+    }
+
+    .btn_secondary {
+        @apply hover:bg-dark_grey bg-black;
+    }
+}
