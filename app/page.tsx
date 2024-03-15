@@ -39,7 +39,7 @@ export default function Home() {
                 </Container>
             </section>
             <Container px="5">
-                <section className="pb-[72px] pt-[110px] sm:pb-[48px] md:pb-[120px]">
+                <section className="mb-5 pb-[72px] pt-[110px] sm:pb-[48px] md:pb-[120px]">
                     <AudioCategories />
                 </section>
 
@@ -56,7 +56,7 @@ export default function Home() {
                             initial: "center",
                             md: "between"
                         }}
-                        className="my-5 overflow-hidden rounded-md bg-primary bg-circle_pattern bg-cover bg-[center_top_-130px] bg-no-repeat px-7 pb-[55px] pt-[62px] sm:pb-[64px] md:bg-[length:75%] md:bg-[position:-25%_10%] md:pb-0 md:pl-[138px] md:pr-[122px]"
+                        className="mb-5 overflow-hidden rounded-md bg-primary bg-circle_pattern bg-cover bg-[center_top_-130px] bg-no-repeat px-7 pb-[55px] pt-[62px] sm:pb-[64px] md:bg-[length:75%] md:bg-[position:-25%_10%] md:pb-0 md:pl-[138px] md:pr-[122px]"
                     >
                         <img
                             src="/images/speaker-zx9.png"
@@ -83,7 +83,7 @@ export default function Home() {
                     <Flex
                         direction="column"
                         justify="center"
-                        className="h-[320px] rounded-md bg-[url('/images/speaker-zx7.jpg')] bg-cover bg-center bg-no-repeat px-[26px] sm:bg-[url('/images/sm-speaker-zx7.jpg')] sm:px-[63px] md:bg-[url('/images/md-speaker-zx7.jpg')] md:px-[96px]"
+                        className="mb-6 h-[320px] rounded-md bg-[url('/images/speaker-zx7.jpg')] bg-cover bg-center bg-no-repeat px-[26px] sm:bg-[url('/images/sm-speaker-zx7.jpg')] sm:px-[63px] md:bg-[url('/images/md-speaker-zx7.jpg')] md:px-[96px]"
                     >
                         <p className="mb-[30px] text-s8 font-semibold uppercase tracking-wide">
                             ZX7 Speaker
@@ -91,6 +91,26 @@ export default function Home() {
                         <Link href="/" className="btn btn_outline">
                             See Product
                         </Link>
+                    </Flex>
+                </section>
+
+                <section>
+                    <Flex
+                        direction={{
+                            initial: "column",
+                            sm: "row"
+                        }}
+                        className="mb-6 gap-6 sm:gap-3 md:gap-[30px]"
+                    >
+                        <div className="h-[200px] rounded-md bg-[url('/images/earphones-yx1.jpg')] bg-cover bg-center bg-no-repeat sm:h-[320px] sm:w-1/2 sm:bg-[url('/images/sm-earphones-yx1.jpg')] md:bg-[url('/images/md-earphones-yx1.jpg')]"></div>
+                        <div className="sm:p-15 box-border flex h-[200px] flex-col justify-center gap-8 rounded-sm bg-grey pl-6 sm:h-[320px] sm:w-1/2 sm:pl-11 md:pl-24">
+                            <p className="text-s8 font-bold uppercase tracking-wide">
+                                YX1 Earphones
+                            </p>
+                            <Link href="/" className="btn btn_outline">
+                                See Product
+                            </Link>
+                        </div>
                     </Flex>
                 </section>
             </Container>
