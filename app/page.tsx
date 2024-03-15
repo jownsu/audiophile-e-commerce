@@ -56,7 +56,7 @@ export default function Home() {
                             initial: "center",
                             md: "between"
                         }}
-                        className="mb-5 overflow-hidden rounded-md bg-primary bg-circle_pattern bg-cover bg-[center_top_-130px] bg-no-repeat px-7 pb-[55px] pt-[62px] sm:pb-[64px] md:bg-[length:75%] md:bg-[position:-25%_10%] md:pb-0 md:pl-[138px] md:pr-[122px]"
+                        className="mb-5 overflow-hidden rounded-md bg-primary bg-circle_pattern bg-cover bg-[center_top_-130px] bg-no-repeat px-7 pb-[55px] pt-[62px] sm:mb-[32px] sm:pb-[64px] md:bg-[length:75%] md:bg-[position:-25%_10%] md:pb-0 md:pl-[138px] md:pr-[122px]"
                     >
                         <img
                             src="/images/speaker-zx9.png"
@@ -83,7 +83,7 @@ export default function Home() {
                     <Flex
                         direction="column"
                         justify="center"
-                        className="mb-6 h-[320px] rounded-md bg-[url('/images/speaker-zx7.jpg')] bg-cover bg-center bg-no-repeat px-[26px] sm:bg-[url('/images/sm-speaker-zx7.jpg')] sm:px-[63px] md:bg-[url('/images/md-speaker-zx7.jpg')] md:px-[96px]"
+                        className="mb-6 h-[320px] rounded-md bg-[url('/images/speaker-zx7.jpg')] bg-cover bg-center bg-no-repeat px-[26px] sm:mb-[32px] sm:bg-[url('/images/sm-speaker-zx7.jpg')] sm:px-[63px] md:bg-[url('/images/md-speaker-zx7.jpg')] md:px-[96px]"
                     >
                         <p className="mb-[30px] text-s8 font-semibold uppercase tracking-wide">
                             ZX7 Speaker
@@ -100,7 +100,7 @@ export default function Home() {
                             initial: "column",
                             sm: "row"
                         }}
-                        className="mb-6 gap-6 sm:gap-3 md:gap-[30px]"
+                        className="mb-[120px] gap-6 sm:mb-[96px] sm:gap-3 md:mb-[200px] md:gap-[30px]"
                     >
                         <div className="h-[200px] rounded-md bg-[url('/images/earphones-yx1.jpg')] bg-cover bg-center bg-no-repeat sm:h-[320px] sm:w-1/2 sm:bg-[url('/images/sm-earphones-yx1.jpg')] md:bg-[url('/images/md-earphones-yx1.jpg')]"></div>
                         <div className="sm:p-15 box-border flex h-[200px] flex-col justify-center gap-8 rounded-sm bg-grey pl-6 sm:h-[320px] sm:w-1/2 sm:pl-11 md:pl-24">
@@ -110,6 +110,40 @@ export default function Home() {
                             <Link href="/" className="btn btn_outline">
                                 See Product
                             </Link>
+                        </div>
+                    </Flex>
+                </section>
+
+                <section>
+                    <Flex
+                        direction={{
+                            initial: "column",
+                            md: "row"
+                        }}
+                        align={{
+                            md: "center"
+                        }}
+                        justify={{}}
+                        className="mb-[118px] gap-[36px] sm:mb-[97px] sm:gap-[63px] md:gap-[30px]"
+                    >
+                        <div className="h-[300px] rounded-md bg-[url('/images/best-gear.jpg')] bg-cover bg-center bg-no-repeat sm:h-[320px] sm:bg-[url('/images/sm-best-gear.jpg')] md:order-2 md:h-[588px] md:w-1/2 md:bg-[url('/images/md-best-gear.jpg')]"></div>
+                        <div className="text-center text-black sm:mx-auto sm:max-w-[570px] md:mx-0 md:w-1/2 md:text-start">
+                            <p className="mb-[30px] text-s8 font-bold uppercase leading-none sm:mb-[34px] sm:text-s11 md:order-1 md:max-w-[400px]">
+                                Bringing you the{" "}
+                                <span className="text-primary">best</span> audio
+                                gear
+                            </p>
+                            <p className="text-s4 opacity-50 md:max-w-[430px]">
+                                Located at the heart of New York City,
+                                Audiophile is the premier store for high end
+                                headphones, earphones, speakers, and audio
+                                accessories. We have a large showroom and luxury
+                                demonstration rooms available for you to browse
+                                and experience a wide range of our products.
+                                Stop by our store to meet some of the fantastic
+                                people who make Audiophile the best place to buy
+                                your portable audio equipment.
+                            </p>
                         </div>
                     </Flex>
                 </section>
