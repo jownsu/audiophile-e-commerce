@@ -31,16 +31,16 @@ const Navbar = () => {
         <nav
             className={`fixed top-0 z-50 w-full duration-200 ${scrolled ? "bg-black" : "bg-transparent"}`}
         >
-            <Container px="5">
+            <Container className="sm:px-10">
                 <Flex
                     justify={{
                         initial: "between",
                         sm: "start",
                         md: "between"
                     }}
-                    py="5"
+                    align="center"
                     gap="5"
-                    className="border-b border-white border-opacity-10 "
+                    className="h-[90px] border-b border-white border-opacity-10 px-6 sm:px-0"
                 >
                     <MobileNav />
                     <Link href="/" className="sm:mr-auto md:mr-0">
@@ -52,7 +52,7 @@ const Navbar = () => {
                             className="object-contain"
                         />{" "}
                     </Link>
-                    <NavLinks className="hidden sm:gap-x-5 md:flex" />
+                    <NavLinks className="hidden sm:gap-[34px] md:flex" />
                     <Cart />
                 </Flex>
             </Container>

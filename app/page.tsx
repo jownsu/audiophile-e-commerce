@@ -7,10 +7,7 @@ export default function Home() {
         <div>
             <section className="relative bg-hero bg-cover bg-center bg-no-repeat text-white md:bg-lg_hero">
                 <div className="absolute left-0 top-0 z-10 h-full w-full bg-black opacity-50"></div>
-                <Container
-                    className="relative z-20 text-center bg-blend-darken md:text-start"
-                    px="5"
-                >
+                <Container className="relative z-20 px-10 text-center bg-blend-darken md:text-start">
                     <Flex
                         direction="column"
                         align={{
@@ -38,7 +35,7 @@ export default function Home() {
                     </Flex>
                 </Container>
             </section>
-            <Container px="5">
+            <Container className="px-10">
                 <section className="mb-5 pb-[72px] pt-[110px] sm:pb-[48px] md:pb-[120px]">
                     <AudioCategories />
                 </section>

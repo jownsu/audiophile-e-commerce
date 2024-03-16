@@ -6,7 +6,7 @@ const NavLinks = ({ className }: { className?: string }) => {
             {LINKS.map((link) => (
                 <li key={link.href} className="">
                     <Link
-                        className="text-s2 font-semibold  uppercase tracking-widest text-white duration-200 hover:text-primary"
+                        className="text-s2 font-semibold uppercase tracking-widest text-white duration-200 hover:text-primary"
                         href={link.href}
                     >
                         {link.label}
