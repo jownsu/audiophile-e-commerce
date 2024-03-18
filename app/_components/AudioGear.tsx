@@ -1,8 +1,8 @@
 import { Flex } from "@radix-ui/themes";
 
-const AudioGear = () => {
+const AudioGear = ({ className }: { className?: string }) => {
     return (
-        <section id="audio_gear_section">
+        <section id="audio_gear_section" className={className}>
             <Flex
                 direction={{
                     initial: "column",

@@ -39,7 +39,7 @@ export default function Home() {
                     </Flex>
                 </Container>
             </section>
-            <Container className="px-10">
+            <Container className="px-6 sm:px-10">
                 <section
                     id="audio_categories_section"
                     className="mb-5 pb-[72px] pt-[110px] sm:pb-[48px] md:pb-[120px]"
