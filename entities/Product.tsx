@@ -3,6 +3,7 @@ export interface Product {
     categoryId: number;
     new: boolean;
     name: string;
+    slug: string;
     description: string;
     images: {
         mobile: string;

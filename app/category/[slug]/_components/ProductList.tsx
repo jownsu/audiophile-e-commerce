@@ -35,7 +35,7 @@ const ProductList = ({ products }: Props) => {
                             <p className="text-primary uppercase tracking-[10px] text-s3 sm:mb-[6px] mb-[20px] md:mb-[16px]">New Product</p>
                             <p className="font-bold text-s8 uppercase sm:max-w-[300px] mx-auto sm:text-s11 md:mx-0 md:leading-[43px] mb-[24px] sm:leading-[42px] sm:mb-[35px]">{product.name}</p>
                             <p className="text-s4 opacity-50 sm:max-w-[570px] mx-auto mb-[25px] sm:mb-[23px] md:mb-[40px]">{product.description}</p>
-                            <Link href={""} className="btn btn_primary text-white">See Product</Link>
+                            <Link href={`/product/${product.slug}`} className="btn btn_primary text-white">See Product</Link>
                         </div>
                     </div>
                 ))}

@@ -33,7 +33,7 @@ export default function Home() {
                             build quality made for the passionate music
                             enthusiast.
                         </p>
-                        <Link href="/" className="btn btn_primary">
+                        <Link href="/product/xx99-mark-two-headphones" className="btn btn_primary">
                             See Product
                         </Link>
                     </Flex>
@@ -76,7 +76,7 @@ export default function Home() {
                                 phenomenally built to deliver truly remarkable
                                 sound.
                             </p>
-                            <Link href="/" className="btn btn_secondary">
+                            <Link href="/product/zx9-speaker" className="btn btn_secondary">
                                 See Product
                             </Link>
                         </div>
@@ -92,7 +92,7 @@ export default function Home() {
                         <p className="mb-[30px] text-s8 font-semibold uppercase tracking-wide">
                             ZX7 Speaker
                         </p>
-                        <Link href="/" className="btn btn_outline">
+                        <Link href="/product/zx7-speaker" className="btn btn_outline">
                             See Product
                         </Link>
                     </Flex>
@@ -111,7 +111,7 @@ export default function Home() {
                             <p className="text-s8 font-bold uppercase tracking-wide">
                                 YX1 Earphones
                             </p>
-                            <Link href="/" className="btn btn_outline">
+                            <Link href="/product/yx1-earphones" className="btn btn_outline">
                                 See Product
                             </Link>
                         </div>

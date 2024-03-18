@@ -5,18 +5,18 @@ import { Container } from "@radix-ui/themes";
 import AudioGear from "../../_components/AudioGear";
 
 interface Props {
-    params: { category: string };
+    params: { slug: string };
 }
 
-const page = async ({ params }: Props) => {
-    const res = await fetch(`http://localhost:3000/api/categories/${params.category}`);
+const CategoryPage = async ({ params }: Props) => {
+    const res = await fetch(`http://localhost:3000/api/categories/${params.slug}`);
     const products: Product[] = await res.json();
 
     return (
         <div>
             <div className="h-[192px] bg-black pt-[122px]">
                 <p className="text-center text-s8 font-semibold uppercase tracking-wide text-white">
-                    {params.category}
+                    {params.slug}
                 </p>
             </div>
 
@@ -29,4 +29,4 @@ const page = async ({ params }: Props) => {
     );
 };
 
-export default page;
+export default CategoryPage;
