@@ -23,15 +23,15 @@ const LINKS = [
         label: "Home"
     },
     {
-        href: "/headphones",
+        href: "/category/headphones",
         label: "Headphones"
     },
     {
-        href: "/speakers",
+        href: "/category/speakers",
         label: "Speakers"
     },
     {
-        href: "/Earphones",
+        href: "/category/earphones",
         label: "Earphones"
     }
 ];

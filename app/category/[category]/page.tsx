@@ -1,8 +1,8 @@
 import { Product } from "@/entities/Product";
-import AudioCategories from "../_components/AudioCategories";
+import AudioCategories from "../../_components/AudioCategories";
 import ProductList from "./_components/ProductList";
 import { Container } from "@radix-ui/themes";
-import AudioGear from "../_components/AudioGear";
+import AudioGear from "../../_components/AudioGear";
 
 interface Props {
     params: { category: string };
@@ -13,7 +13,7 @@ const page = async ({ params }: Props) => {
     const products: Product[] = await res.json();
 
     return (
-        <div className="">
+        <div>
             <div className="h-[192px] bg-black pt-[122px]">
                 <p className="text-center text-s8 font-semibold uppercase tracking-wide text-white">
                     {params.category}

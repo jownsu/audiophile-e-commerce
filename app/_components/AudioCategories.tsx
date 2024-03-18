@@ -19,17 +19,17 @@ const AudioCategories = ({ className }: { className?: string }) => {
 
 const LINKS = [
     {
-        href: "/headphones",
+        href: "/category/headphones",
         label: "Headphones",
         image: "/images/category/headphones.png"
     },
     {
-        href: "/speakers",
+        href: "/category/speakers",
         label: "Speakers",
         image: "/images/category/speakers.png"
     },
     {
-        href: "/earphones",
+        href: "/category/earphones",
         label: "Earphones",
         image: "/images/category/earphones.png"
     }
