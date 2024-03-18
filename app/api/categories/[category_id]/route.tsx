@@ -10,6 +10,7 @@ const DUMMY_DATA = [
                 categoryId: 1,
                 new: true,
                 name: "xx99 Mark II Headphones",
+                slug: "xx99-mark-two-headphones",
                 description:
                     "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
                 images: {
@@ -23,6 +24,7 @@ const DUMMY_DATA = [
                 categoryId: 1,
                 new: false,
                 name: "XX99 Mark I Headphones",
+                slug: "xx99-mark-one-headphones",
                 description:
                     "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
                 images: {
@@ -36,6 +38,7 @@ const DUMMY_DATA = [
                 categoryId: 1,
                 new: false,
                 name: "XX59 Headphones",
+                slug: "xx59-headphones",
                 description:
                     "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
                 images: {
@@ -55,6 +58,7 @@ const DUMMY_DATA = [
                 categoryId: 2,
                 new: true,
                 name: "zx9 Speaker",
+                slug: "zx9-speaker",
                 description: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
                 images: {
                     mobile: "/images/product/zx9_speaker.jpg",
@@ -67,6 +71,7 @@ const DUMMY_DATA = [
                 categoryId: 2,
                 new: false,
                 name: "zx7 Speaker",
+                slug: "zx7-speaker",
                 description: "Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
                 images: {
                     mobile: "/images/product/zx7_speaker.jpg",
@@ -85,6 +90,7 @@ const DUMMY_DATA = [
                 categoryId: 3,
                 new: true,
                 name: "YX1 Wireless Earphones",
+                slug: "yx1-earphones",
                 description: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
                 images: {
                     mobile: "/images/product/yx1-earphones.jpg",
