@@ -1,10 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import AudioCategories from "./AudioCategories";
 
 const MobileNav = () => {
     const [showNav, setShowNav] = useState(false);
+    const pathname = usePathname();
+
+    useEffect(() => {
+        if (showNav) {
+            setShowNav(false);
+        }
+    }, [pathname]);
 
     return (
         <div className="block md:hidden">

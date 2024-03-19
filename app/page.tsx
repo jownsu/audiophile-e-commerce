@@ -76,7 +76,7 @@ export default function Home() {
                                 phenomenally built to deliver truly remarkable
                                 sound.
                             </p>
-                            <Link href="/product/zx9-speaker" className="btn btn_secondary">
+                            <Link href="/product/zx9-speaker" className="btn btn_secondary mx-auto md:mx-0">
                                 See Product
                             </Link>
                         </div>
