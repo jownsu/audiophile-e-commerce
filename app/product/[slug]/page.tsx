@@ -15,7 +15,7 @@ const ProductPage = async ({ params }: Props) => {
     const product: Product = await res.json();
     return (
         <div>
-            <Container className="px-6 pt-[120px] sm:px-10">
+            <Container className="px-6 pt-[107px] sm:px-10 sm:pt-[123px] md:pt-[169px]">
                 <button
                     className="mb-[25px] text-s4 text-black opacity-50"
                     type="button"
