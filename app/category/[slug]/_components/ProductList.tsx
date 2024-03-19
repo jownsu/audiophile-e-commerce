@@ -1,14 +1,12 @@
-"use client";
-
 import { Product } from "@/entities/Product";
 import Link from "next/link";
-import React from "react";
 
 interface Props {
     products: Product[];
 }
 
 const ProductList = ({ products }: Props) => {
+
     return (
         <div className="space-y-[120px] pb-[100px] md:pb-[150px]">
             {products.length &&

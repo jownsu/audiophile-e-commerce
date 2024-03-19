@@ -27,8 +27,9 @@ const Navbar = () => {
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
+            setScrolled(true);
         };
-    }, []);
+    }, [pathname]);
 
     return (
         <nav

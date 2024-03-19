@@ -32,5 +32,14 @@ export interface Product {
             tablet: string;
             laptop: string;
         }
-    }
+    },
+    others: {
+        slug: string,
+        name: string,
+        images: {
+            mobile: string;
+            tablet: string;
+            laptop: string;
+        }
+    }[]
 }

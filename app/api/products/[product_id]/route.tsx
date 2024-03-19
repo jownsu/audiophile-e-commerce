@@ -183,8 +183,8 @@ const DUMMY_DATA = [
         name: "XX99 Mark I Headphones",
         images: {
             mobile: "/images/item/product-xx99-mark-one-headphones/mobile/image-product.jpg",
-            tablet: "/images/item/product-xx99-mark-one-headphones/tablet/image-product.jpg",
-            laptop: "/images/item/product-xx99-mark-one-headphones/desktop/image-product.jpg"
+            tablet: "/images/item/product-xx99-mark-one-headphones/tablet/sm-image-product.jpg",
+            laptop: "/images/item/product-xx99-mark-one-headphones/desktop/md-image-product.jpg"
         },
         category: "headphones",
         categoryimages: {

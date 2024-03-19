@@ -99,7 +99,7 @@ const ProductPage = async ({ params }: Props) => {
                     </div>
                 </div>
 
-                <div className="mb-[123px] grid grid-rows-[174px_174px_368px] gap-[20px] sm:grid-flow-col sm:grid-cols-[minmax(277px,_43%)_minmax(395px,_57%)] sm:grid-rows-[174px_174px] md:grid-cols-[minmax(445px,_43%)_minmax(635px,_57%)] md:grid-rows-[280px_280px] md:gap-[30px]">
+                <div className="mb-[120px] grid grid-rows-[174px_174px_368px] gap-[20px] sm:grid-flow-col sm:mb-[116px] md:mb-[156px] sm:grid-cols-[minmax(277px,_43%)_minmax(395px,_57%)] sm:grid-rows-[174px_174px] md:grid-cols-[minmax(445px,_43%)_minmax(635px,_57%)] md:grid-rows-[280px_280px] md:gap-[30px]">
                     <picture>
                         <source
                             media="(min-width: 1024px)"
@@ -158,7 +158,46 @@ const ProductPage = async ({ params }: Props) => {
                         />
                     </picture>
                 </div>
+                <div className="text-center uppercase mb-[97px] md:mb-[150px]">
+                    <p className="mb-[40px] text-s7 font-bold sm:mb-[53px] md:mb-[60px]">
+                        You may also like
+                    </p>
 
+                    <div className="flex flex-col gap-[56px] sm:flex-row sm:gap-[11px] md:gap-[30px]">
+                        {product.others.map((other) => (
+                            <div className="flex flex-col sm:flex-1" key={other.slug}>
+                                <picture className="h-[120px] w-full sm:h-[318px] bg-grey rounded-lg mb-[31px] sm:mb-[38px] md:mb-[36px]">
+                                    <source
+                                        media="(min-width: 1024px)"
+                                        srcSet={other.images.laptop}
+                                    />
+                                    <source
+                                        media="(min-width: 768px)"
+                                        srcSet={other.images.tablet}
+                                    />
+                                    <source
+                                        media="(max-width: 520px)"
+                                        srcSet={other.images.mobile}
+                                    />
+                                    <img
+                                        src={other.images.mobile}
+                                        alt=""
+                                        className="h-full w-full rounded-lg object-contain"
+                                    />
+                                </picture>
+                                <p className="text-s7 font-bold mb-[31px] sm:mb-[28px] md:mb-[30px]">
+                                    {other.name}
+                                </p>
+                                <Link
+                                    href={`/product/${other.slug}`}
+                                    className="btn btn_primary mx-auto text-white"
+                                >
+                                    See product
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
                 <AudioCategories className="mb-[92px] md:mb-[132px]" />
                 <AudioGear />
             </Container>
