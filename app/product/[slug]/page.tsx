@@ -83,7 +83,7 @@ const ProductPage = async ({ params }: Props) => {
                         </p>
                         <div>
                             {product.includes.map((box) => (
-                                <div className="flex">
+                                <div className="flex" key={box.item}>
                                     <span className="inline-block w-[38px] text-s4 font-bold text-primary">
                                         {box.quantity}x
                                     </span>{" "}
