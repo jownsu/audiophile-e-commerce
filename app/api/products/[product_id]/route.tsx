@@ -14,8 +14,7 @@ const DUMMY_DATA = [
         categoryimages: {
             mobile: "/images/item/product-yx1-earphones/mobile/image-category-page-preview.jpg",
             tablet: "/images/item/product-yx1-earphones/tablet/image-category-page-preview.jpg",
-            laptop:
-                "/images/item/product-yx1-earphones/desktop/image-category-page-preview.jpg"
+            laptop: "/images/item/product-yx1-earphones/desktop/image-category-page-preview.jpg"
         },
         new: true,
         price: 599,
@@ -49,20 +48,17 @@ const DUMMY_DATA = [
             first: {
                 mobile: "/images/item/product-yx1-earphones/mobile/image-gallery-1.jpg",
                 tablet: "/images/item/product-yx1-earphones/tablet/image-gallery-1.jpg",
-                laptop:
-                    "/images/item/product-yx1-earphones/desktop/image-gallery-1.jpg"
+                laptop: "/images/item/product-yx1-earphones/desktop/image-gallery-1.jpg"
             },
             second: {
                 mobile: "/images/item/product-yx1-earphones/mobile/image-gallery-2.jpg",
                 tablet: "/images/item/product-yx1-earphones/tablet/image-gallery-2.jpg",
-                laptop:
-                    "/images/item/product-yx1-earphones/desktop/image-gallery-2.jpg"
+                laptop: "/images/item/product-yx1-earphones/desktop/image-gallery-2.jpg"
             },
             third: {
                 mobile: "/images/item/product-yx1-earphones/mobile/image-gallery-3.jpg",
                 tablet: "/images/item/product-yx1-earphones/tablet/image-gallery-3.jpg",
-                laptop:
-                    "/images/item/product-yx1-earphones/desktop/image-gallery-3.jpg"
+                laptop: "/images/item/product-yx1-earphones/desktop/image-gallery-3.jpg"
             }
         },
         others: [
@@ -70,28 +66,27 @@ const DUMMY_DATA = [
                 slug: "xx99-mark-one-headphones",
                 name: "XX99 Mark I",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-xx99-mark-one-headphones.jpg",
-                    tablet: "/images/item/shared/tablet/image-xx99-mark-one-headphones.jpg",
-                    laptop:
-                        "/images/item/shared/desktop/image-xx99-mark-one-headphones.jpg"
+                    mobile: "/images/shared/xx99-mark-one-headphones.jpg",
+                    tablet: "/images/shared/sm-xx99-mark-one-headphones.jpg",
+                    laptop: "/images/shared/md-xx99-mark-one-headphones.jpg"
                 }
             },
             {
                 slug: "xx59-headphones",
                 name: "XX59",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-xx59-headphones.jpg",
-                    tablet: "/images/item/shared/tablet/image-xx59-headphones.jpg",
-                    laptop: "/images/item/shared/desktop/image-xx59-headphones.jpg"
+                    mobile: "/images/shared/xx59-headphones.jpg",
+                    tablet: "/images/shared/sm-xx59-headphones.jpg",
+                    laptop: "/images/shared/md-xx59-headphones.jpg"
                 }
             },
             {
                 slug: "zx9-speaker",
                 name: "ZX9 Speaker",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-zx9-speaker.jpg",
-                    tablet: "/images/item/shared/tablet/image-zx9-speaker.jpg",
-                    laptop: "/images/item/shared/desktop/image-zx9-speaker.jpg"
+                    mobile: "/images/shared/zx9-speaker.jpg",
+                    tablet: "/images/shared/sm-zx9-speaker.jpg",
+                    laptop: "/images/shared/md-zx9-speaker.jpg"
                 }
             }
         ]
@@ -103,15 +98,13 @@ const DUMMY_DATA = [
         images: {
             mobile: "/images/item/product-xx59-headphones/mobile/image-product.jpg",
             tablet: "/images/item/product-xx59-headphones/tablet/image-product.jpg",
-            laptop:
-                "/images/item/product-xx59-headphones/desktop/image-product.jpg"
+            laptop: "/images/item/product-xx59-headphones/desktop/image-product.jpg"
         },
         category: "headphones",
         categoryimages: {
             mobile: "/images/item/product-xx59-headphones/mobile/image-category-page-preview.jpg",
             tablet: "/images/item/product-xx59-headphones/tablet/image-category-page-preview.jpg",
-            laptop:
-                "/images/item/product-xx59-headphones/desktop/image-category-page-preview.jpg"
+            laptop: "/images/item/product-xx59-headphones/desktop/image-category-page-preview.jpg"
         },
         new: false,
         price: 899,
@@ -141,20 +134,17 @@ const DUMMY_DATA = [
             first: {
                 mobile: "/images/item/product-xx59-headphones/mobile/image-gallery-1.jpg",
                 tablet: "/images/item/product-xx59-headphones/tablet/image-gallery-1.jpg",
-                laptop:
-                    "/images/item/product-xx59-headphones/desktop/image-gallery-1.jpg"
+                laptop: "/images/item/product-xx59-headphones/desktop/image-gallery-1.jpg"
             },
             second: {
                 mobile: "/images/item/product-xx59-headphones/mobile/image-gallery-2.jpg",
                 tablet: "/images/item/product-xx59-headphones/tablet/image-gallery-2.jpg",
-                laptop:
-                    "/images/item/product-xx59-headphones/desktop/image-gallery-2.jpg"
+                laptop: "/images/item/product-xx59-headphones/desktop/image-gallery-2.jpg"
             },
             third: {
                 mobile: "/images/item/product-xx59-headphones/mobile/image-gallery-3.jpg",
                 tablet: "/images/item/product-xx59-headphones/tablet/image-gallery-3.jpg",
-                laptop:
-                    "/images/item/product-xx59-headphones/desktop/image-gallery-3.jpg"
+                laptop: "/images/item/product-xx59-headphones/desktop/image-gallery-3.jpg"
             }
         },
         others: [
@@ -162,29 +152,27 @@ const DUMMY_DATA = [
                 slug: "xx99-mark-two-headphones",
                 name: "XX99 Mark II",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-xx99-mark-two-headphones.jpg",
-                    tablet: "/images/item/shared/tablet/image-xx99-mark-two-headphones.jpg",
-                    laptop:
-                        "/images/item/shared/desktop/image-xx99-mark-two-headphones.jpg"
+                    mobile: "/images/shared/xx99-mark-two-headphones.jpg",
+                    tablet: "/images/shared/sm-xx99-mark-two-headphones.jpg",
+                    laptop: "/images/shared/md-xx99-mark-two-headphones.jpg"
                 }
             },
             {
                 slug: "xx99-mark-one-headphones",
                 name: "XX99 Mark I",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-xx99-mark-one-headphones.jpg",
-                    tablet: "/images/item/shared/tablet/image-xx99-mark-one-headphones.jpg",
-                    laptop:
-                        "/images/item/shared/desktop/image-xx99-mark-one-headphones.jpg"
+                    mobile: "/images/shared/xx99-mark-one-headphones.jpg",
+                    tablet: "/images/shared/sm-xx99-mark-one-headphones.jpg",
+                    laptop: "/images/shared/md-xx99-mark-one-headphones.jpg"
                 }
             },
             {
                 slug: "zx9-speaker",
                 name: "ZX9 Speaker",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-zx9-speaker.jpg",
-                    tablet: "/images/item/shared/tablet/image-zx9-speaker.jpg",
-                    laptop: "/images/item/shared/desktop/image-zx9-speaker.jpg"
+                    mobile: "/images/shared/zx9-speaker.jpg",
+                    tablet: "/images/shared/sm-zx9-speaker.jpg",
+                    laptop: "/images/shared/md-zx9-speaker.jpg"
                 }
             }
         ]
@@ -196,15 +184,13 @@ const DUMMY_DATA = [
         images: {
             mobile: "/images/item/product-xx99-mark-one-headphones/mobile/image-product.jpg",
             tablet: "/images/item/product-xx99-mark-one-headphones/tablet/image-product.jpg",
-            laptop:
-                "/images/item/product-xx99-mark-one-headphones/desktop/image-product.jpg"
+            laptop: "/images/item/product-xx99-mark-one-headphones/desktop/image-product.jpg"
         },
         category: "headphones",
         categoryimages: {
             mobile: "/images/item/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg",
             tablet: "/images/item/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg",
-            laptop:
-                "/images/item/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg"
+            laptop: "/images/item/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg"
         },
         new: false,
         price: 1750,
@@ -234,20 +220,17 @@ const DUMMY_DATA = [
             first: {
                 mobile: "/images/item/product-xx99-mark-one-headphones/mobile/image-gallery-1.jpg",
                 tablet: "/images/item/product-xx99-mark-one-headphones/tablet/image-gallery-1.jpg",
-                laptop:
-                    "/images/item/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg"
+                laptop: "/images/item/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg"
             },
             second: {
                 mobile: "/images/item/product-xx99-mark-one-headphones/mobile/image-gallery-2.jpg",
                 tablet: "/images/item/product-xx99-mark-one-headphones/tablet/image-gallery-2.jpg",
-                laptop:
-                    "/images/item/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg"
+                laptop: "/images/item/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg"
             },
             third: {
                 mobile: "/images/item/product-xx99-mark-one-headphones/mobile/image-gallery-3.jpg",
                 tablet: "/images/item/product-xx99-mark-one-headphones/tablet/image-gallery-3.jpg",
-                laptop:
-                    "/images/item/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg"
+                laptop: "/images/item/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg"
             }
         },
         others: [
@@ -255,28 +238,27 @@ const DUMMY_DATA = [
                 slug: "xx99-mark-two-headphones",
                 name: "XX99 Mark II",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-xx99-mark-two-headphones.jpg",
-                    tablet: "/images/item/shared/tablet/image-xx99-mark-two-headphones.jpg",
-                    laptop:
-                        "/images/item/shared/desktop/image-xx99-mark-two-headphones.jpg"
+                    mobile: "/images/shared/xx99-mark-two-headphones.jpg",
+                    tablet: "/images/shared/sm-xx99-mark-two-headphones.jpg",
+                    laptop: "/images/shared/md-xx99-mark-two-headphones.jpg"
                 }
             },
             {
                 slug: "xx59-headphones",
                 name: "XX59",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-xx59-headphones.jpg",
-                    tablet: "/images/item/shared/tablet/image-xx59-headphones.jpg",
-                    laptop: "/images/item/shared/desktop/image-xx59-headphones.jpg"
+                    mobile: "/images/shared/xx59-headphones.jpg",
+                    tablet: "/images/shared/sm-xx59-headphones.jpg",
+                    laptop: "/images/shared/md-xx59-headphones.jpg"
                 }
             },
             {
                 slug: "zx9-speaker",
                 name: "ZX9 Speaker",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-zx9-speaker.jpg",
-                    tablet: "/images/item/shared/tablet/image-zx9-speaker.jpg",
-                    laptop: "/images/item/shared/desktop/image-zx9-speaker.jpg"
+                    mobile: "/images/shared/zx9-speaker.jpg",
+                    tablet: "/images/shared/sm-zx9-speaker.jpg",
+                    laptop: "/images/shared/md-zx9-speaker.jpg"
                 }
             }
         ]
@@ -288,15 +270,13 @@ const DUMMY_DATA = [
         images: {
             mobile: "/images/item/product-xx99-mark-two-headphones/mobile/image-product.jpg",
             tablet: "/images/item/product-xx99-mark-two-headphones/tablet/image-product.jpg",
-            laptop:
-                "/images/item/product-xx99-mark-two-headphones/desktop/image-product.jpg"
+            laptop: "/images/item/product-xx99-mark-two-headphones/desktop/image-product.jpg"
         },
         category: "headphones",
         categoryimages: {
             mobile: "/images/item/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg",
             tablet: "/images/item/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg",
-            laptop:
-                "/images/item/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg"
+            laptop: "/images/item/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg"
         },
         new: true,
         price: 2999,
@@ -330,20 +310,17 @@ const DUMMY_DATA = [
             first: {
                 mobile: "/images/item/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg",
                 tablet: "/images/item/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg",
-                laptop:
-                    "/images/item/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg"
+                laptop: "/images/item/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg"
             },
             second: {
                 mobile: "/images/item/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg",
                 tablet: "/images/item/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg",
-                laptop:
-                    "/images/item/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg"
+                laptop: "/images/item/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg"
             },
             third: {
                 mobile: "/images/item/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg",
                 tablet: "/images/item/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg",
-                laptop:
-                    "/images/item/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg"
+                laptop: "/images/item/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg"
             }
         },
         others: [
@@ -351,28 +328,27 @@ const DUMMY_DATA = [
                 slug: "xx99-mark-one-headphones",
                 name: "XX99 Mark I",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-xx99-mark-one-headphones.jpg",
-                    tablet: "/images/item/shared/tablet/image-xx99-mark-one-headphones.jpg",
-                    laptop:
-                        "/images/item/shared/desktop/image-xx99-mark-one-headphones.jpg"
+                    mobile: "/images/shared/xx99-mark-one-headphones.jpg",
+                    tablet: "/images/shared/sm-xx99-mark-one-headphones.jpg",
+                    laptop: "/images/shared/md-xx99-mark-one-headphones.jpg"
                 }
             },
             {
                 slug: "xx59-headphones",
                 name: "XX59",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-xx59-headphones.jpg",
-                    tablet: "/images/item/shared/tablet/image-xx59-headphones.jpg",
-                    laptop: "/images/item/shared/desktop/image-xx59-headphones.jpg"
+                    mobile: "/images/shared/xx59-headphones.jpg",
+                    tablet: "/images/shared/sm-xx59-headphones.jpg",
+                    laptop: "/images/shared/md-xx59-headphones.jpg"
                 }
             },
             {
                 slug: "zx9-speaker",
                 name: "ZX9 Speaker",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-zx9-speaker.jpg",
-                    tablet: "/images/item/shared/tablet/image-zx9-speaker.jpg",
-                    laptop: "/images/item/shared/desktop/image-zx9-speaker.jpg"
+                    mobile: "/images/shared/zx9-speaker.jpg",
+                    tablet: "/images/shared/sm-zx9-speaker.jpg",
+                    laptop: "/images/shared/md-zx9-speaker.jpg"
                 }
             }
         ]
@@ -390,8 +366,7 @@ const DUMMY_DATA = [
         categoryimages: {
             mobile: "/images/item/product-zx7-speaker/mobile/image-category-page-preview.jpg",
             tablet: "/images/item/product-zx7-speaker/tablet/image-category-page-preview.jpg",
-            laptop:
-                "/images/item/product-zx7-speaker/desktop/image-category-page-preview.jpg"
+            laptop: "/images/item/product-zx7-speaker/desktop/image-category-page-preview.jpg"
         },
         new: false,
         price: 3500,
@@ -425,20 +400,17 @@ const DUMMY_DATA = [
             first: {
                 mobile: "/images/item/product-zx7-speaker/mobile/image-gallery-1.jpg",
                 tablet: "/images/item/product-zx7-speaker/tablet/image-gallery-1.jpg",
-                laptop:
-                    "/images/item/product-zx7-speaker/desktop/image-gallery-1.jpg"
+                laptop: "/images/item/product-zx7-speaker/desktop/image-gallery-1.jpg"
             },
             second: {
                 mobile: "/images/item/product-zx7-speaker/mobile/image-gallery-2.jpg",
                 tablet: "/images/item/product-zx7-speaker/tablet/image-gallery-2.jpg",
-                laptop:
-                    "/images/item/product-zx7-speaker/desktop/image-gallery-2.jpg"
+                laptop: "/images/item/product-zx7-speaker/desktop/image-gallery-2.jpg"
             },
             third: {
                 mobile: "/images/item/product-zx7-speaker/mobile/image-gallery-3.jpg",
                 tablet: "/images/item/product-zx7-speaker/tablet/image-gallery-3.jpg",
-                laptop:
-                    "/images/item/product-zx7-speaker/desktop/image-gallery-3.jpg"
+                laptop: "/images/item/product-zx7-speaker/desktop/image-gallery-3.jpg"
             }
         },
         others: [
@@ -446,28 +418,27 @@ const DUMMY_DATA = [
                 slug: "zx9-speaker",
                 name: "ZX9 Speaker",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-zx9-speaker.jpg",
-                    tablet: "/images/item/shared/tablet/image-zx9-speaker.jpg",
-                    laptop: "/images/item/shared/desktop/image-zx9-speaker.jpg"
+                    mobile: "/images/shared/zx9-speaker.jpg",
+                    tablet: "/images/shared/sm-zx9-speaker.jpg",
+                    laptop: "/images/shared/md-zx9-speaker.jpg"
                 }
             },
             {
                 slug: "xx99-mark-one-headphones",
                 name: "XX99 Mark I",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-xx99-mark-one-headphones.jpg",
-                    tablet: "/images/item/shared/tablet/image-xx99-mark-one-headphones.jpg",
-                    laptop:
-                        "/images/item/shared/desktop/image-xx99-mark-one-headphones.jpg"
+                    mobile: "/images/shared/xx99-mark-one-headphones.jpg",
+                    tablet: "/images/shared/sm-xx99-mark-one-headphones.jpg",
+                    laptop: "/images/shared/md-xx99-mark-one-headphones.jpg"
                 }
             },
             {
                 slug: "xx59-headphones",
                 name: "XX59",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-xx59-headphones.jpg",
-                    tablet: "/images/item/shared/tablet/image-xx59-headphones.jpg",
-                    laptop: "/images/item/shared/desktop/image-xx59-headphones.jpg"
+                    mobile: "/images/shared/xx59-headphones.jpg",
+                    tablet: "/images/shared/sm-xx59-headphones.jpg",
+                    laptop: "/images/shared/md-xx59-headphones.jpg"
                 }
             }
         ]
@@ -485,8 +456,7 @@ const DUMMY_DATA = [
         categoryimages: {
             mobile: "/images/item/product-zx9-speaker/mobile/image-category-page-preview.jpg",
             tablet: "/images/item/product-zx9-speaker/tablet/image-category-page-preview.jpg",
-            laptop:
-                "/images/item/product-zx9-speaker/desktop/image-category-page-preview.jpg"
+            laptop: "/images/item/product-zx9-speaker/desktop/image-category-page-preview.jpg"
         },
         new: true,
         price: 4500,
@@ -520,20 +490,17 @@ const DUMMY_DATA = [
             first: {
                 mobile: "/images/item/product-zx9-speaker/mobile/image-gallery-1.jpg",
                 tablet: "/images/item/product-zx9-speaker/tablet/image-gallery-1.jpg",
-                laptop:
-                    "/images/item/product-zx9-speaker/desktop/image-gallery-1.jpg"
+                laptop: "/images/item/product-zx9-speaker/desktop/image-gallery-1.jpg"
             },
             second: {
                 mobile: "/images/item/product-zx9-speaker/mobile/image-gallery-2.jpg",
                 tablet: "/images/item/product-zx9-speaker/tablet/image-gallery-2.jpg",
-                laptop:
-                    "/images/item/product-zx9-speaker/desktop/image-gallery-2.jpg"
+                laptop: "/images/item/product-zx9-speaker/desktop/image-gallery-2.jpg"
             },
             third: {
                 mobile: "/images/item/product-zx9-speaker/mobile/image-gallery-3.jpg",
                 tablet: "/images/item/product-zx9-speaker/tablet/image-gallery-3.jpg",
-                laptop:
-                    "/images/item/product-zx9-speaker/desktop/image-gallery-3.jpg"
+                laptop: "/images/item/product-zx9-speaker/desktop/image-gallery-3.jpg"
             }
         },
         others: [
@@ -541,28 +508,27 @@ const DUMMY_DATA = [
                 slug: "zx7-speaker",
                 name: "ZX7 Speaker",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-zx7-speaker.jpg",
-                    tablet: "/images/item/shared/tablet/image-zx7-speaker.jpg",
-                    laptop: "/images/item/shared/desktop/image-zx7-speaker.jpg"
+                    mobile: "/images/shared/zx7-speaker.jpg",
+                    tablet: "/images/shared/sm-zx7-speaker.jpg",
+                    laptop: "/images/shared/md-zx7-speaker.jpg"
                 }
             },
             {
                 slug: "xx99-mark-one-headphones",
                 name: "XX99 Mark I",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-xx99-mark-one-headphones.jpg",
-                    tablet: "/images/item/shared/tablet/image-xx99-mark-one-headphones.jpg",
-                    laptop:
-                        "/images/item/shared/desktop/image-xx99-mark-one-headphones.jpg"
+                    mobile: "/images/shared/xx99-mark-one-headphones.jpg",
+                    tablet: "/images/shared/sm-xx99-mark-one-headphones.jpg",
+                    laptop: "/images/shared/md-xx99-mark-one-headphones.jpg"
                 }
             },
             {
                 slug: "xx59-headphones",
                 name: "XX59",
                 images: {
-                    mobile: "/images/item/shared/mobile/image-xx59-headphones.jpg",
-                    tablet: "/images/item/shared/tablet/image-xx59-headphones.jpg",
-                    laptop: "/images/item/shared/desktop/image-xx59-headphones.jpg"
+                    mobile: "/images/shared/xx59-headphones.jpg",
+                    tablet: "/images/shared/sm-xx59-headphones.jpg",
+                    laptop: "/images/shared/md-xx59-headphones.jpg"
                 }
             }
         ]
