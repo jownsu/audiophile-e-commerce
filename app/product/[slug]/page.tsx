@@ -60,7 +60,7 @@ const ProductPage = async ({ params }: Props) => {
                             $ {product.price.toLocaleString()}
                         </p>
                         <div className="flex gap-[16px]">
-                            <ProductQuantity />
+                            <ProductQuantity variant="lg" />
                             <button
                                 className="btn btn_primary text-white"
                                 type="button"
