@@ -7,15 +7,18 @@ import Cart from "./Cart";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
+    const [scrolled, setScrolled] = useState(true);
+    const pathname = usePathname()
 
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 0) {
                 setScrolled(true);
-            } else {
+            } 
+            else if(window.scrollY <= 0 && pathname === "/"){
                 setScrolled(false);
             }
         };

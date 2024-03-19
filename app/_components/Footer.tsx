@@ -42,7 +42,7 @@ const Footer = () => {
                     <div className="absolute left-1/2 top-0 h-1 w-[100px] -translate-x-1/2 bg-primary sm:left-0 sm:translate-x-0"></div>
                     <Link href="/">
                         <Image
-                            src="images/icon/logo.svg"
+                            src="/images/icon/logo.svg"
                             alt="Audiophile logo"
                             width={143}
                             height={25}

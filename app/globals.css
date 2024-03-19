@@ -15,7 +15,7 @@
 
 @layer components {
     .btn {
-        @apply inline-block w-fit px-8 h-[48px] text-s2 font-semibold uppercase tracking-wider duration-200;
+        @apply w-fit px-8 h-[48px] text-s2 font-semibold uppercase tracking-wider duration-200 flex items-center;
     }
 
     .btn_primary {
