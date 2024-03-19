@@ -33,7 +33,7 @@ const config: Config = {
                 xs: "520px",
                 sm: "768px",
                 md: "1024px",
-                lg: "1280px",
+                lg: "1217px",
                 xl: "1640px"
             },
             backgroundImage: {

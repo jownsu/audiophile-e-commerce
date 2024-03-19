@@ -37,7 +37,7 @@ const Cart = () => {
             </Dialog.Trigger>
             <Dialog.Portal>
                 <Dialog.Overlay className="data-[state=open]:animate-overlayShow fixed inset-0 bg-black bg-opacity-50" />
-                <Dialog.Content className="data-[state=open]:animate-contentShow fixed left-[50%] top-[114px] w-[calc(100%-48px)] max-w-[377px] -translate-x-[50%] rounded-lg bg-white px-[28px] py-[31px] focus:outline-none sm:left-[initial] sm:right-[40px] sm:-translate-x-0">
+                <Dialog.Content className="data-[state=open]:animate-contentShow fixed left-[50%] top-[114px] w-[calc(100%-48px)] max-w-[377px] -translate-x-[50%] rounded-lg bg-white px-[28px] py-[31px] focus:outline-none sm:left-[initial] sm:right-[40px] sm:-translate-x-0 lg:right-[calc(50%-380px)] lg:-translate-x-[-50%]">
                     <div className="mb-[32px] flex items-center justify-between">
                         <p className="text-s5 font-bold uppercase">Cart (3)</p>
                         <button
