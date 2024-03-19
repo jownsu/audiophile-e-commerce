@@ -10,7 +10,7 @@ const MobileNav = () => {
         <div className="block md:hidden">
             <button onClick={() => setShowNav(!showNav)}>
                 <img
-                    src="images/icon/icon-hamburger.svg"
+                    src="/images/icon/icon-hamburger.svg"
                     alt="hamburger icon"
                 />
             </button>

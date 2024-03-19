@@ -22,7 +22,7 @@ const LinkCard = ({ link }: Props) => {
             <Text className="flex items-center gap-3 text-s2 font-semibold text-black text-opacity-50 duration-200 group-hover:text-primary">
                 SHOP{" "}
                 <img
-                    src="images/icon/icon-arrow-right.svg"
+                    src="/images/icon/icon-arrow-right.svg"
                     alt="right icon"
                     className="inline-block"
                 />

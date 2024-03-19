@@ -45,7 +45,7 @@ const Navbar = () => {
                     <MobileNav />
                     <Link href="/" className="sm:mr-auto md:mr-0">
                         <Image
-                            src="images/icon/logo.svg"
+                            src="/images/icon/logo.svg"
                             alt="audiophile icon"
                             height={25}
                             width={143}

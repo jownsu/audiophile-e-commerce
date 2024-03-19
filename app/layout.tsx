@@ -25,7 +25,7 @@ export default function RootLayout({
             <body className="min-h-screen bg-neutral-50">
                 <Theme>
                     <Navbar />
-                    <main>{children}</main>
+                    <main className="text-black">{children}</main>
                     <Footer />
                 </Theme>
             </body>

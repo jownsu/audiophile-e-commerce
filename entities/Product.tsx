@@ -4,7 +4,13 @@ export interface Product {
     new: boolean;
     name: string;
     slug: string;
+    price: number;
     description: string;
+    features: string;
+    includes: {
+        quantity: number;
+        item: string;
+    }[];
     images: {
         mobile: string;
         tablet: string;
