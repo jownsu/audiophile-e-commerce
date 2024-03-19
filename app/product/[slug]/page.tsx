@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Product } from "@/entities/Product";
 import { Container } from "@radix-ui/themes";
-import ProductQuantity from "./_components/ProductQuantity";
+import ProductQuantity from "../../_components/ProductQuantity";
 import AudioCategories from "@/app/_components/AudioCategories";
 import AudioGear from "@/app/_components/AudioGear";
 
@@ -158,6 +158,7 @@ const ProductPage = async ({ params }: Props) => {
                         />
                     </picture>
                 </div>
+
                 <div className="text-center uppercase mb-[97px] md:mb-[150px]">
                     <p className="mb-[40px] text-s7 font-bold sm:mb-[53px] md:mb-[60px]">
                         You may also like
@@ -198,6 +199,7 @@ const ProductPage = async ({ params }: Props) => {
                         ))}
                     </div>
                 </div>
+
                 <AudioCategories className="mb-[92px] md:mb-[132px]" />
                 <AudioGear />
             </Container>
