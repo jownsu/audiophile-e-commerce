@@ -1,24 +1,23 @@
 "use client";
 
+import AudiophileLogo from "@/public/images/icon/logo.svg";
 import { Container, Flex } from "@radix-ui/themes";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import Cart from "./Cart";
 import MobileNav from "./MobileNav";
 import NavLinks from "./NavLinks";
-import Cart from "./Cart";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(true);
-    const pathname = usePathname()
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 0) {
                 setScrolled(true);
-            } 
-            else if(window.scrollY <= 0 && pathname === "/"){
+            } else if (window.scrollY <= 0 && pathname === "/") {
                 setScrolled(false);
             }
         };
@@ -48,13 +47,7 @@ const Navbar = () => {
                 >
                     <MobileNav />
                     <Link href="/" className="sm:mr-auto md:mr-0">
-                        <Image
-                            src="/images/icon/logo.svg"
-                            alt="audiophile icon"
-                            height={25}
-                            width={143}
-                            className="object-contain"
-                        />{" "}
+                        <AudiophileLogo className="fill-white duration-200 hover:fill-primary" />
                     </Link>
                     <NavLinks className="hidden sm:gap-[34px] md:flex" />
                     <Cart />

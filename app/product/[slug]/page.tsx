@@ -46,7 +46,7 @@ const ProductPage = async ({ params }: Props) => {
                         />
                     </picture>
 
-                    <div className="">
+                    <div>
                         <p className="mb-[27px] text-s3 uppercase tracking-[10px] text-primary sm:mb-[17px] sm:text-s1">
                             New Product
                         </p>
@@ -201,6 +201,7 @@ const ProductPage = async ({ params }: Props) => {
                 </div>
 
                 <AudioCategories className="mb-[92px] md:mb-[132px]" />
+                
                 <AudioGear />
             </Container>
         </div>

@@ -1,7 +1,9 @@
+import CartIcon from "@/public/images/icon/icon-cart.svg";
+
 const Cart = () => {
     return (
-        <button>
-            <img src="/images/icon/icon-cart.svg" alt="cart icon" />
+        <button type="button">
+            <CartIcon className="fill-white duration-200 hover:fill-primary" />
         </button>
     );
 };
