@@ -16,4 +16,21 @@ export interface Product {
         tablet: string;
         laptop: string;
     };
+    gallery: {
+        first: {
+            mobile: string;
+            tablet: string;
+            laptop: string;
+        },
+        second: {
+            mobile: string;
+            tablet: string;
+            laptop: string;
+        },
+        third: {
+            mobile: string;
+            tablet: string;
+            laptop: string;
+        }
+    }
 }

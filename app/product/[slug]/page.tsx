@@ -68,7 +68,8 @@ const ProductPage = async ({ params }: Props) => {
                         </div>
                     </div>
                 </div>
-                <div className="mb-[90px] flex flex-col gap-[87px] md:flex-row md:gap-[123px]">
+
+                <div className="mb-[90px] flex flex-col gap-[87px] sm:mb-[120px] md:mb-[160px] md:flex-row md:gap-[123px]">
                     <div className="md:w-[540px]">
                         <p className="mb-[27px] text-s7 font-bold uppercase">
                             Features
@@ -94,6 +95,66 @@ const ProductPage = async ({ params }: Props) => {
                             ))}
                         </div>
                     </div>
+                </div>
+
+                <div className="mb-[123px] grid grid-rows-[174px_174px_368px] gap-[20px] sm:grid-flow-col sm:grid-cols-[minmax(277px,_43%)_minmax(395px,_57%)] sm:grid-rows-[174px_174px] md:grid-cols-[minmax(445px,_43%)_minmax(635px,_57%)] md:grid-rows-[280px_280px] md:gap-[30px]">
+                    <picture>
+                        <source
+                            media="(min-width: 1024px)"
+                            srcSet={product.gallery.first.laptop}
+                        />
+                        <source
+                            media="(min-width: 768px)"
+                            srcSet={product.gallery.first.tablet}
+                        />
+                        <source
+                            media="(max-width: 520px)"
+                            srcSet={product.gallery.first.mobile}
+                        />
+                        <img
+                            src={product.gallery.first.mobile}
+                            alt=""
+                            className="h-full w-full rounded-lg object-cover"
+                        />
+                    </picture>
+                    <picture>
+                        <source
+                            media="(min-width: 1024px)"
+                            srcSet={product.gallery.second.laptop}
+                        />
+                        <source
+                            media="(min-width: 768px)"
+                            srcSet={product.gallery.second.tablet}
+                        />
+                        <source
+                            media="(max-width: 520px)"
+                            srcSet={product.gallery.second.mobile}
+                        />
+                        <img
+                            src={product.gallery.second.mobile}
+                            alt=""
+                            className="h-full w-full rounded-lg object-cover"
+                        />
+                    </picture>
+                    <picture className="sm:row-span-2">
+                        <source
+                            media="(min-width: 1024px)"
+                            srcSet={product.gallery.third.laptop}
+                        />
+                        <source
+                            media="(min-width: 768px)"
+                            srcSet={product.gallery.third.tablet}
+                        />
+                        <source
+                            media="(max-width: 520px)"
+                            srcSet={product.gallery.third.mobile}
+                        />
+                        <img
+                            src={product.gallery.third.mobile}
+                            alt=""
+                            className="h-full w-full rounded-lg object-cover"
+                        />
+                    </picture>
                 </div>
             </Container>
         </div>
