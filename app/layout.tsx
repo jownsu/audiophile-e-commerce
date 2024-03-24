@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Footer from "./_components/Footer";
 import Navbar from "./_components/Navbar";
+import QueryClientProvider from "./QueryClientProvider";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -23,11 +24,13 @@ export default function RootLayout({
     return (
         <html lang="en" className={manrope.className}>
             <body className="min-h-screen bg-neutral-50">
-                <Theme>
-                    <Navbar />
-                    <main className="text-black">{children}</main>
-                    <Footer />
-                </Theme>
+                <QueryClientProvider>
+                    <Theme>
+                        <Navbar />
+                        <main className="text-black">{children}</main>
+                        <Footer />
+                    </Theme>
+                </QueryClientProvider>
             </body>
         </html>
     );

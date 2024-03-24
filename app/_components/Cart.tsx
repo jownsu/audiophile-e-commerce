@@ -2,34 +2,16 @@
 
 import CartIcon from "@/public/images/icon/icon-cart.svg";
 import * as Dialog from "@radix-ui/react-dialog";
-import ProductQuantity from "./ProductQuantity";
-import { Container } from "@radix-ui/themes";
+import CartItemList from "./CartItemList";
+interface Cart {
+    id: number;
+    image: string;
+    name: string;
+    price: number;
+    quantity: number;
+}
 
-const DUMMY_CART = [
-    {
-        id: 1,
-        image: "/images/cart/xx59-headphones.jpg",
-        name: "xx59 mk II",
-        price: 2999,
-        quantity: 1
-    },
-    {
-        id: 2,
-        image: "/images/cart/xx99-mark-one-headphones.jpg",
-        name: "xx59",
-        price: 2999,
-        quantity: 4
-    },
-    {
-        id: 3,
-        image: "/images/cart/xx99-mark-two-headphones.jpg",
-        name: "yx1",
-        price: 2999,
-        quantity: 7
-    }
-];
-
-const Cart = () => {
+const Cart = async () => {
     return (
         <Dialog.Root>
             <Dialog.Trigger>
@@ -47,31 +29,8 @@ const Cart = () => {
                             Remove all
                         </button>
                     </div>
-                    <ul className="mb-[32px] flex flex-col gap-[24px]">
-                        {DUMMY_CART.map((cart) => (
-                            <li
-                                key={cart.id}
-                                className="flex items-center justify-between"
-                            >
-                                <div className="flex items-center gap-[14px]">
-                                    <img
-                                        src={cart.image}
-                                        className="h-[64px] w-[64px] rounded-lg"
-                                        alt=""
-                                    />
-                                    <div className="font-bold">
-                                        <p className="text-s4 uppercase">
-                                            {cart.name}
-                                        </p>
-                                        <p className="text-s3 opacity-50">
-                                            $ {cart.price.toLocaleString()}
-                                        </p>
-                                    </div>
-                                </div>
-                                <ProductQuantity initial={cart.quantity} />
-                            </li>
-                        ))}
-                    </ul>
+
+                    <CartItemList />
 
                     <div className="mb-[22px] flex items-center justify-between">
                         <p className="text-s4 uppercase opacity-50">Total</p>
