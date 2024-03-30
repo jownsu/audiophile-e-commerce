@@ -5,9 +5,10 @@ import ProductQuantity from "./ProductQuantity";
 
 interface Props {
     cart: Cart[];
+    read_only?: boolean;
 }
 
-const CartItemList = ({ cart }: Props) => {
+const CartItemList = ({ cart, read_only = false }: Props) => {
     const { mutate: updateCartItem } = updateItem();
     const { mutate: deleteCartItem } = removeItem();
 
@@ -35,12 +36,20 @@ const CartItemList = ({ cart }: Props) => {
                             </p>
                         </div>
                     </div>
-                    <ProductQuantity
-                        value={cart_item.quantity}
-                        handleAdd={(quantity) => updateCartItem({ ...cart_item, quantity })}
-                        handleMinus={(quantity) => updateCartItem({ ...cart_item, quantity })}
-                        handleRemove={() => deleteCartItem(cart_item)}
-                    />
+                    {read_only ? (
+                        <p className="self-start pt-[10px] text-s4 opacity-50 font-bold">x{cart_item.quantity}</p>
+                    ) : (
+                        <ProductQuantity
+                            value={cart_item.quantity}
+                            handleAdd={(quantity) =>
+                                updateCartItem({ ...cart_item, quantity })
+                            }
+                            handleMinus={(quantity) =>
+                                updateCartItem({ ...cart_item, quantity })
+                            }
+                            handleRemove={() => deleteCartItem(cart_item)}
+                        />
+                    )}
                 </li>
             ))}
         </ul>

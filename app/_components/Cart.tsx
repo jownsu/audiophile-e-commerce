@@ -47,11 +47,13 @@ const Cart = () => {
                         <p className="text-s4 uppercase opacity-50">Total</p>
                         <p className="text-s5 font-bold">
                             ${" "}
-                            {cart?.reduce(
-                                (total, item) =>
-                                    total + item.price * item.quantity,
-                                0
-                            )}
+                            {cart
+                                ?.reduce(
+                                    (total, item) =>
+                                        total + item.price * item.quantity,
+                                    0
+                                )
+                                .toLocaleString()}
                         </p>
                     </div>
 
