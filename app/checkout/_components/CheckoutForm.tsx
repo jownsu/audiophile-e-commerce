@@ -1,14 +1,13 @@
 "use client";
 
-import Cart from "@/app/_components/Cart";
 import CartItemList from "@/app/_components/CartItemList";
-import { getCart } from "@/app/_hooks/useCart";
+import { getCart, removeAllItem } from "@/app/_hooks/useCart";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
-import CheckoutDialog from "./CheckoutDialog";
+import CheckoutDialog, { CheckoutInfo } from "./CheckoutDialog";
 
 const schema = z.object({
     name: z.string().min(1, "Required").max(255, "255 max character"),
@@ -25,15 +24,9 @@ const schema = z.object({
 
 type CheckForm = z.infer<typeof schema>;
 
-interface CheckoutInfo {
-    first_item: Cart;
-    other_item_count: number;
-    total: number;
-}
-
 const CheckoutForm = () => {
     const { data: cart } = getCart();
-
+    const { mutate: removeAllCartItems } = removeAllItem();
     const [isShowCheckoutModal, setShowCheckoutModal] = useState(false);
     const [checkoutInfo, setCheckoutInfo] = useState<CheckoutInfo | undefined>();
 
@@ -66,7 +59,7 @@ const CheckoutForm = () => {
                 total: total || 0
             });
         }
-
+        removeAllCartItems();
         setShowCheckoutModal(true);
     };
 
@@ -378,12 +371,14 @@ const CheckoutForm = () => {
                         </span>
                     </div>
 
-                    <button
-                        type="submit"
-                        className="btn btn_primary w-full justify-center text-white"
-                    >
-                        Continue & Pay
-                    </button>
+                    {!!cart?.length && (
+                        <button
+                            type="submit"
+                            className="btn btn_primary w-full justify-center text-white"
+                        >
+                            Continue & Pay
+                        </button>
+                    )}
                 </div>
             </form>
             <CheckoutDialog

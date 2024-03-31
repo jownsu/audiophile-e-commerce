@@ -36,7 +36,7 @@ const Cart = () => {
                         </button>
                     </div>
 
-                    {cart && cart.length ? (
+                    {cart && !!cart.length ? (
                         <CartItemList cart={cart} />
                     ) : (
                         <p className="my-5 text-center uppercase tracking-wide opacity-50">
@@ -57,15 +57,17 @@ const Cart = () => {
                                 .toLocaleString()}
                         </p>
                     </div>
-                    <Dialog.Close asChild>
-                        <Link
-                            type="button"
-                            className="btn btn_primary w-full justify-center text-white"
-                            href={"/checkout"}
-                        >
-                            Checkout
-                        </Link>
-                    </Dialog.Close>
+                    {cart && !!cart.length && (
+                        <Dialog.Close asChild>
+                            <Link
+                                type="button"
+                                className="btn btn_primary w-full justify-center text-white"
+                                href={"/checkout"}
+                            >
+                                Checkout
+                            </Link>
+                        </Dialog.Close>
+                    )}
                 </Dialog.Content>
             </Dialog.Portal>
         </Dialog.Root>

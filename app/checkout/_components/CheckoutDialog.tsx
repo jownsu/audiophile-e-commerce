@@ -5,7 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import CheckIcon from "@/public/images/checkout/icon-order-confirmation.svg";
 import Cart from "@/app/_components/Cart";
 
-interface CheckoutInfo {
+export interface CheckoutInfo {
     first_item: Cart;
     other_item_count: number;
     total: number;
@@ -17,6 +17,7 @@ interface Props {
 }
 
 const CheckoutDialog = ({ open, checkoutInfo }: Props) => {
+    
     return (
         <Dialog.Root open={open}>
             <Dialog.Portal>

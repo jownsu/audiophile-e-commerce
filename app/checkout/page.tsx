@@ -1,5 +1,4 @@
 import { Container } from "@radix-ui/themes";
-
 import CheckoutForm from "./_components/CheckoutForm";
 
 const CheckoutPage = () => {
