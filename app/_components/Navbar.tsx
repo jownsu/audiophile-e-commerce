@@ -42,8 +42,7 @@ const Navbar = () => {
                         md: "between"
                     }}
                     align="center"
-                    gap="5"
-                    className="h-[90px] border-b border-white border-opacity-10 px-6 sm:px-0"
+                    className="h-[90px] gap-[42px] border-b border-white border-opacity-10 px-6 sm:px-0"
                 >
                     <MobileNav />
                     <Link href="/" className="sm:mr-auto md:mr-0">

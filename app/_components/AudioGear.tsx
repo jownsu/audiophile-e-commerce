@@ -12,7 +12,7 @@ const AudioGear = ({ className }: { className?: string }) => {
                     md: "center"
                 }}
                 justify={{}}
-                className="mb-[118px] gap-[36px] sm:mb-[97px] sm:gap-[63px] md:gap-[30px]"
+                className="mb-[118px] gap-[36px] sm:mb-[97px] sm:gap-[63px] md:mb-[120px] md:gap-[30px]"
             >
                 <div className="h-[300px] rounded-md bg-[url('/images/best-gear.jpg')] bg-cover bg-center bg-no-repeat sm:h-[320px] sm:bg-[url('/images/sm-best-gear.jpg')] md:order-2 md:h-[588px] md:w-1/2 md:bg-[url('/images/md-best-gear.jpg')]"></div>
                 <div className="text-center text-black sm:mx-auto sm:max-w-[570px] md:mx-0 md:w-1/2 md:text-start">

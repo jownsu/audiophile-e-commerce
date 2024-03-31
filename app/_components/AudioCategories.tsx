@@ -8,7 +8,7 @@ const AudioCategories = ({ className }: { className?: string }) => {
                 initial: "1",
                 xs: "3"
             }}
-            className={`w-full gap-x-4 gap-y-16 pb-7 pt-20 ${className}`}
+            className={`w-full gap-x-[10px] gap-y-[75px] pb-7 pt-20 md:gap-x-[30px] ${className}`}
         >
             {LINKS.map((link) => (
                 <LinkCard key={link.label} link={link} />

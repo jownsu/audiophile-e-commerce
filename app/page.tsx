@@ -34,7 +34,10 @@ export default function Home() {
                             build quality made for the passionate music
                             enthusiast.
                         </p>
-                        <Link href="/product/xx99-mark-two-headphones" className="btn btn_primary">
+                        <Link
+                            href="/product/xx99-mark-two-headphones"
+                            className="btn btn_primary"
+                        >
                             See Product
                         </Link>
                     </Flex>
@@ -43,7 +46,7 @@ export default function Home() {
             <Container className="px-6 sm:px-10">
                 <section
                     id="audio_categories_section"
-                    className="mb-5 pb-[72px] pt-[110px] sm:pb-[48px] md:pb-[120px]"
+                    className="mb-5 pb-[72px] pt-[18px] sm:pb-[48px] sm:pt-[73px] md:pb-[120px] md:pt-[110px]"
                 >
                     <AudioCategories />
                 </section>
@@ -61,7 +64,7 @@ export default function Home() {
                             initial: "center",
                             md: "between"
                         }}
-                        className="mb-5 overflow-hidden rounded-md bg-primary bg-circle_pattern bg-cover bg-[center_top_-130px] bg-no-repeat px-7 pb-[55px] pt-[62px] sm:mb-[32px] sm:pb-[64px] md:bg-[length:75%] md:bg-[position:-25%_10%] md:pb-0 md:pl-[138px] md:pr-[122px]"
+                        className="mb-[24px] overflow-hidden rounded-md bg-primary bg-circle_pattern bg-cover bg-[center_top_-130px] bg-no-repeat px-7 pb-[55px] pt-[62px] sm:mb-[32px] sm:pb-[64px] md:mb-[48px] md:bg-[length:75%] md:bg-[position:-25%_10%] md:pb-0 md:pl-[138px] md:pr-[122px]"
                     >
                         <Image
                             height={380}
@@ -79,7 +82,10 @@ export default function Home() {
                                 phenomenally built to deliver truly remarkable
                                 sound.
                             </p>
-                            <Link href="/product/zx9-speaker" className="btn btn_secondary mx-auto md:mx-0">
+                            <Link
+                                href="/product/zx9-speaker"
+                                className="btn btn_secondary mx-auto md:mx-0"
+                            >
                                 See Product
                             </Link>
                         </div>
@@ -90,12 +96,15 @@ export default function Home() {
                     <Flex
                         direction="column"
                         justify="center"
-                        className="mb-6 h-[320px] rounded-md bg-[url('/images/speaker-zx7.jpg')] bg-cover bg-center bg-no-repeat px-[26px] sm:mb-[32px] sm:bg-[url('/images/sm-speaker-zx7.jpg')] sm:px-[63px] md:bg-[url('/images/md-speaker-zx7.jpg')] md:px-[96px]"
+                        className="mb-[24px] h-[320px] rounded-md bg-[url('/images/speaker-zx7.jpg')] bg-cover bg-center bg-no-repeat px-[26px] sm:mb-[32px] sm:bg-[url('/images/sm-speaker-zx7.jpg')] sm:px-[63px] md:mb-[48px] md:bg-[url('/images/md-speaker-zx7.jpg')] md:px-[96px]"
                     >
                         <p className="mb-[30px] text-s8 font-semibold uppercase tracking-wide">
                             ZX7 Speaker
                         </p>
-                        <Link href="/product/zx7-speaker" className="btn btn_outline">
+                        <Link
+                            href="/product/zx7-speaker"
+                            className="btn btn_outline"
+                        >
                             See Product
                         </Link>
                     </Flex>
@@ -114,7 +123,10 @@ export default function Home() {
                             <p className="text-s8 font-bold uppercase tracking-wide">
                                 YX1 Earphones
                             </p>
-                            <Link href="/product/yx1-earphones" className="btn btn_outline">
+                            <Link
+                                href="/product/yx1-earphones"
+                                className="btn btn_outline"
+                            >
                                 See Product
                             </Link>
                         </div>
