@@ -1,11 +1,14 @@
 "use client";
 
-import * as RadioGroup from "@radix-ui/react-radio-group";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { getCart } from "@/app/_hooks/useCart";
+import Cart from "@/app/_components/Cart";
 import CartItemList from "@/app/_components/CartItemList";
+import { getCart } from "@/app/_hooks/useCart";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as RadioGroup from "@radix-ui/react-radio-group";
+import { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { z } from "zod";
+import CheckoutDialog from "./CheckoutDialog";
 
 const schema = z.object({
     name: z.string().min(1, "Required").max(255, "255 max character"),
@@ -22,8 +25,17 @@ const schema = z.object({
 
 type CheckForm = z.infer<typeof schema>;
 
+interface CheckoutInfo {
+    first_item: Cart;
+    other_item_count: number;
+    total: number;
+}
+
 const CheckoutForm = () => {
     const { data: cart } = getCart();
+
+    const [isShowCheckoutModal, setShowCheckoutModal] = useState(false);
+    const [checkoutInfo, setCheckoutInfo] = useState<CheckoutInfo | undefined>();
 
     const {
         register,
@@ -46,319 +58,339 @@ const CheckoutForm = () => {
 
     if (total) vat = total * 0.25;
 
-    const onSubmit: SubmitHandler<CheckForm> = (data) => console.log(data)
+    const onSubmit: SubmitHandler<CheckForm> = () => {
+        if (cart) {
+            setCheckoutInfo({
+                first_item: cart[0],
+                other_item_count: cart?.length - 1,
+                total: total || 0
+            });
+        }
+
+        setShowCheckoutModal(true);
+    };
 
     return (
-        <form
-            className="flex flex-col gap-[32px] md:mb-[141px] md:flex-row md:gap-[30px]"
-            onSubmit={handleSubmit(onSubmit)}
-        >
-            <div className="rounded-lg bg-white p-[24px] sm:py-[30px] md:flex-1 md:p-[48px]">
-                <p className="mb-[33px] text-s8 font-bold uppercase sm:mb-[40px]">
-                    Checkout
-                </p>
-
-                <div className="mb-[36px] sm:mb-[56px]">
-                    <p className="mb-[18px] text-s2 font-bold uppercase tracking-wide text-primary">
-                        Billing Details
+        <>
+            <form
+                className="flex flex-col gap-[32px] md:mb-[141px] md:flex-row md:gap-[30px]"
+                onSubmit={handleSubmit(onSubmit)}
+            >
+                <div className="rounded-lg bg-white p-[24px] sm:py-[30px] md:flex-1 md:p-[48px]">
+                    <p className="mb-[33px] text-s8 font-bold uppercase sm:mb-[40px]">
+                        Checkout
                     </p>
 
-                    <div className="grid gap-[25px] sm:grid-cols-2 sm:gap-x-[16px] sm:gap-y-[24px]">
-                        <label htmlFor="name">
-                            <div className="mb-[7px] flex justify-between">
-                                <p
-                                    className={`text-s1 font-bold ${errors?.name && "text-error"}`}
-                                >
-                                    Name
-                                </p>
-                                {errors?.name && (
-                                    <p className="text-s1 font-medium text-error">
-                                        {errors.name.message}
+                    <div className="mb-[36px] sm:mb-[56px]">
+                        <p className="mb-[18px] text-s2 font-bold uppercase tracking-wide text-primary">
+                            Billing Details
+                        </p>
+
+                        <div className="grid gap-[25px] sm:grid-cols-2 sm:gap-x-[16px] sm:gap-y-[24px]">
+                            <label htmlFor="name">
+                                <div className="mb-[7px] flex justify-between">
+                                    <p
+                                        className={`text-s1 font-bold ${errors?.name && "text-error"}`}
+                                    >
+                                        Name
                                     </p>
-                                )}
-                            </div>
-                            <input
-                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.name ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
-                                type="text"
-                                {...register("name")}
-                                placeholder="Alexei Ward"
-                            />
-                        </label>
+                                    {errors?.name && (
+                                        <p className="text-s1 font-medium text-error">
+                                            {errors.name.message}
+                                        </p>
+                                    )}
+                                </div>
+                                <input
+                                    className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.name ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
+                                    type="text"
+                                    {...register("name")}
+                                    placeholder="Alexei Ward"
+                                />
+                            </label>
 
-                        <label htmlFor="email">
-                            <div className="mb-[7px] flex justify-between">
-                                <p
-                                    className={`text-s1 font-bold ${errors?.email && "text-error"}`}
-                                >
-                                    Email Address
-                                </p>
-                                {errors?.email && (
-                                    <p className="text-s1 font-medium text-error">
-                                        {errors.email.message}
+                            <label htmlFor="email">
+                                <div className="mb-[7px] flex justify-between">
+                                    <p
+                                        className={`text-s1 font-bold ${errors?.email && "text-error"}`}
+                                    >
+                                        Email Address
                                     </p>
-                                )}
-                            </div>
-                            <input
-                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.email ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
-                                type="email"
-                                {...register("email")}
-                                placeholder="alexei@mail.com"
-                            />
-                        </label>
+                                    {errors?.email && (
+                                        <p className="text-s1 font-medium text-error">
+                                            {errors.email.message}
+                                        </p>
+                                    )}
+                                </div>
+                                <input
+                                    className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.email ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
+                                    type="email"
+                                    {...register("email")}
+                                    placeholder="alexei@mail.com"
+                                />
+                            </label>
 
-                        <label htmlFor="phone">
-                            <div className="mb-[7px] flex justify-between">
-                                <p
-                                    className={`text-s1 font-bold ${errors?.phone && "text-error"}`}
-                                >
-                                    Phone Numbber
-                                </p>
-                                {errors?.phone && (
-                                    <p className="text-s1 font-medium text-error">
-                                        {errors.phone.message}
+                            <label htmlFor="phone">
+                                <div className="mb-[7px] flex justify-between">
+                                    <p
+                                        className={`text-s1 font-bold ${errors?.phone && "text-error"}`}
+                                    >
+                                        Phone Numbber
                                     </p>
-                                )}
-                            </div>
-                            <input
-                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.phone ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
-                                type="text"
-                                {...register("phone")}
-                                placeholder="+1 202-555-0136"
-                            />
-                        </label>
-                    </div>
-                </div>
-
-                <div className="mb-[36px] sm:mb-[64px]">
-                    <p className="mb-[18px] text-s2 font-bold uppercase tracking-wide text-primary">
-                        Shipping Info
-                    </p>
-
-                    <div className="grid gap-[25px] sm:grid-cols-2 sm:gap-x-[16px] sm:gap-y-[24px]">
-                        <label className="sm:col-span-2" htmlFor="address">
-                            <div className="mb-[7px] flex justify-between">
-                                <p
-                                    className={`text-s1 font-bold ${errors?.address && "text-error"}`}
-                                >
-                                    Your Address
-                                </p>
-                                {errors?.address && (
-                                    <p className="text-s1 font-medium text-error">
-                                        {errors.address.message}
-                                    </p>
-                                )}
-                            </div>
-                            <input
-                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.address ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
-                                type="text"
-                                {...register("address")}
-                                placeholder="1137 Williams Avenue"
-                            />
-                        </label>
-
-                        <label htmlFor="zip_code">
-                            <div className="mb-[7px] flex justify-between">
-                                <p
-                                    className={`text-s1 font-bold ${errors?.zip_code && "text-error"}`}
-                                >
-                                    ZIP Code
-                                </p>
-                                {errors?.zip_code && (
-                                    <p className="text-s1 font-medium text-error">
-                                        {errors.zip_code.message}
-                                    </p>
-                                )}
-                            </div>
-                            <input
-                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.zip_code ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
-                                type="text"
-                                {...register("zip_code")}
-                                placeholder="10001"
-                            />
-                        </label>
-
-                        <label htmlFor="city">
-                            <div className="mb-[7px] flex justify-between">
-                                <p
-                                    className={`text-s1 font-bold ${errors?.city && "text-error"}`}
-                                >
-                                    City
-                                </p>
-                                {errors?.city && (
-                                    <p className="text-s1 font-medium text-error">
-                                        {errors.city.message}
-                                    </p>
-                                )}
-                            </div>
-                            <input
-                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.city ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
-                                type="text"
-                                {...register("city")}
-                                placeholder="New York"
-                            />
-                        </label>
-
-                        <label htmlFor="country">
-                            <div className="mb-[7px] flex justify-between">
-                                <p
-                                    className={`text-s1 font-bold ${errors?.country && "text-error"}`}
-                                >
-                                    Country
-                                </p>
-                                {errors?.country && (
-                                    <p className="text-s1 font-medium text-error">
-                                        {errors.country.message}
-                                    </p>
-                                )}
-                            </div>
-                            <input
-                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.country ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
-                                type="text"
-                                {...register("country")}
-                                placeholder="10001"
-                            />
-                        </label>
-                    </div>
-                </div>
-
-                <div className="mb-[30px] sm:mb-[24px]">
-                    <p className="mb-[18px] text-s2 font-bold uppercase tracking-wide text-primary">
-                        Payment Details
-                    </p>
-
-                    <div className="grid gap-[15px] sm:grid-cols-2">
-                        <p className="text-s1 font-bold">Payment Method</p>
-                        <RadioGroup.Root
-                            className="flex flex-col gap-[16px] font-bold"
-                            value={watch("payment_method")}
-                            onValueChange={(value) =>
-                                setValue("payment_method", value)
-                            }
-                        >
-                            <div className="flex h-[52px] items-center gap-[15px] rounded-md border border-grey_stroke px-[15px] text-start has-[:checked]:border-primary">
-                                <RadioGroup.Item
-                                    id="e_money"
-                                    value="e_money"
-                                    className="group h-[20px] w-[20px] cursor-default rounded-full border border-grey_stroke bg-white outline-none"
-                                >
-                                    <RadioGroup.Indicator className="relative flex h-full w-full items-center justify-center after:block after:h-[10px] after:w-[10px] after:rounded-[50%] after:bg-primary after:content-['']" />
-                                </RadioGroup.Item>
-                                <label
-                                    className="flex-1 text-s3"
-                                    htmlFor="e_money"
-                                >
-                                    e-Money
-                                </label>
-                            </div>
-
-                            <div className="flex h-[52px] items-center gap-[15px] rounded-md border border-grey_stroke px-[15px] text-start has-[:checked]:border-primary">
-                                <RadioGroup.Item
-                                    id="cash_on_delivery"
-                                    value="cash_on_delivery"
-                                    className="h-[20px] w-[20px] cursor-default rounded-full border border-grey_stroke bg-white outline-none"
-                                >
-                                    <RadioGroup.Indicator className="relative flex h-full w-full items-center justify-center after:block after:h-[10px] after:w-[10px] after:rounded-[50%] after:bg-primary after:content-['']" />
-                                </RadioGroup.Item>
-                                <label
-                                    className="flex-1 text-s3"
-                                    htmlFor="cash_on_delivery"
-                                >
-                                    Cash on Delivery
-                                </label>
-                            </div>
-                        </RadioGroup.Root>
-                    </div>
-                </div>
-
-                <div className="grid gap-[24px] sm:grid-cols-2 sm:gap-x-[16px] sm:gap-y-[24px]">
-                    <label htmlFor="money_number">
-                        <div className="mb-[7px] flex justify-between">
-                            <p
-                                className={`text-s1 font-bold ${errors?.money_number && "text-error"}`}
-                            >
-                                e-Money Number
-                            </p>
-                            {errors?.money_number && (
-                                <p className="text-s1 font-medium text-error">
-                                    {errors.money_number.message}
-                                </p>
-                            )}
+                                    {errors?.phone && (
+                                        <p className="text-s1 font-medium text-error">
+                                            {errors.phone.message}
+                                        </p>
+                                    )}
+                                </div>
+                                <input
+                                    className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.phone ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
+                                    type="text"
+                                    {...register("phone")}
+                                    placeholder="+1 202-555-0136"
+                                />
+                            </label>
                         </div>
-                        <input
-                            className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.money_number ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
-                            type="text"
-                            {...register("money_number", {
-                                valueAsNumber: true
-                            })}
-                            placeholder="238521993"
-                        />
-                    </label>
+                    </div>
 
-                    <label htmlFor="money_pin">
-                        <div className="mb-[7px] flex justify-between">
-                            <p
-                                className={`text-s1 font-bold ${errors?.money_pin && "text-error"}`}
-                            >
-                                e-Money PIN
-                            </p>
-                            {errors?.money_pin && (
-                                <p className="text-s1 font-medium text-error">
-                                    {errors.money_pin.message}
-                                </p>
-                            )}
+                    <div className="mb-[36px] sm:mb-[64px]">
+                        <p className="mb-[18px] text-s2 font-bold uppercase tracking-wide text-primary">
+                            Shipping Info
+                        </p>
+
+                        <div className="grid gap-[25px] sm:grid-cols-2 sm:gap-x-[16px] sm:gap-y-[24px]">
+                            <label className="sm:col-span-2" htmlFor="address">
+                                <div className="mb-[7px] flex justify-between">
+                                    <p
+                                        className={`text-s1 font-bold ${errors?.address && "text-error"}`}
+                                    >
+                                        Your Address
+                                    </p>
+                                    {errors?.address && (
+                                        <p className="text-s1 font-medium text-error">
+                                            {errors.address.message}
+                                        </p>
+                                    )}
+                                </div>
+                                <input
+                                    className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.address ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
+                                    type="text"
+                                    {...register("address")}
+                                    placeholder="1137 Williams Avenue"
+                                />
+                            </label>
+
+                            <label htmlFor="zip_code">
+                                <div className="mb-[7px] flex justify-between">
+                                    <p
+                                        className={`text-s1 font-bold ${errors?.zip_code && "text-error"}`}
+                                    >
+                                        ZIP Code
+                                    </p>
+                                    {errors?.zip_code && (
+                                        <p className="text-s1 font-medium text-error">
+                                            {errors.zip_code.message}
+                                        </p>
+                                    )}
+                                </div>
+                                <input
+                                    className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.zip_code ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
+                                    type="text"
+                                    {...register("zip_code")}
+                                    placeholder="10001"
+                                />
+                            </label>
+
+                            <label htmlFor="city">
+                                <div className="mb-[7px] flex justify-between">
+                                    <p
+                                        className={`text-s1 font-bold ${errors?.city && "text-error"}`}
+                                    >
+                                        City
+                                    </p>
+                                    {errors?.city && (
+                                        <p className="text-s1 font-medium text-error">
+                                            {errors.city.message}
+                                        </p>
+                                    )}
+                                </div>
+                                <input
+                                    className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.city ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
+                                    type="text"
+                                    {...register("city")}
+                                    placeholder="New York"
+                                />
+                            </label>
+
+                            <label htmlFor="country">
+                                <div className="mb-[7px] flex justify-between">
+                                    <p
+                                        className={`text-s1 font-bold ${errors?.country && "text-error"}`}
+                                    >
+                                        Country
+                                    </p>
+                                    {errors?.country && (
+                                        <p className="text-s1 font-medium text-error">
+                                            {errors.country.message}
+                                        </p>
+                                    )}
+                                </div>
+                                <input
+                                    className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.country ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
+                                    type="text"
+                                    {...register("country")}
+                                    placeholder="10001"
+                                />
+                            </label>
                         </div>
-                        <input
-                            className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.money_pin ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
-                            type="text"
-                            {...register("money_pin", {
-                                valueAsNumber: true
-                            })}
-                            placeholder="6891"
-                        />
-                    </label>
-                </div>
-            </div>
+                    </div>
 
-            <div className="mb-[97px] rounded-lg bg-white px-[24px] py-[32px] sm:mb-[116px] sm:px-[32px] md:basis-[350px] md:self-start">
-                <p className="mb-[33px] text-s5 font-bold uppercase">Summary</p>
-                {cart && <CartItemList cart={cart} read_only />}
-                <div className="mb-[6px] flex items-center justify-between">
-                    <span className="text-s4 uppercase opacity-50">Total</span>
-                    <span className="text-s5 font-bold">
-                        $ {total?.toLocaleString()}
-                    </span>
-                </div>
-                <div className="mb-[6px] flex items-center justify-between">
-                    <span className="text-s4 uppercase opacity-50">
-                        Shipping
-                    </span>
-                    <span className="text-s5 font-bold">$ 50</span>
-                </div>
-                <div className="mb-[22px] flex items-center justify-between">
-                    <span className="text-s4 uppercase opacity-50">
-                        Vat (included)
-                    </span>
-                    <span className="text-s5 font-bold">
-                        $ {vat.toLocaleString()}
-                    </span>
-                </div>
-                <div className="mb-[30px] flex items-center justify-between">
-                    <span className="text-s4 uppercase opacity-50">
-                        Grand total
-                    </span>
-                    <span className="text-s5 font-bold text-primary">
-                        ${total && (total + 50).toLocaleString()}
-                    </span>
+                    <div className="mb-[30px] sm:mb-[24px]">
+                        <p className="mb-[18px] text-s2 font-bold uppercase tracking-wide text-primary">
+                            Payment Details
+                        </p>
+
+                        <div className="grid gap-[15px] sm:grid-cols-2">
+                            <p className="text-s1 font-bold">Payment Method</p>
+                            <RadioGroup.Root
+                                className="flex flex-col gap-[16px] font-bold"
+                                value={watch("payment_method")}
+                                onValueChange={(value) =>
+                                    setValue("payment_method", value)
+                                }
+                            >
+                                <div className="flex h-[52px] items-center gap-[15px] rounded-md border border-grey_stroke px-[15px] text-start has-[:checked]:border-primary">
+                                    <RadioGroup.Item
+                                        id="e_money"
+                                        value="e_money"
+                                        className="group h-[20px] w-[20px] cursor-default rounded-full border border-grey_stroke bg-white outline-none"
+                                    >
+                                        <RadioGroup.Indicator className="relative flex h-full w-full items-center justify-center after:block after:h-[10px] after:w-[10px] after:rounded-[50%] after:bg-primary after:content-['']" />
+                                    </RadioGroup.Item>
+                                    <label
+                                        className="flex-1 text-s3"
+                                        htmlFor="e_money"
+                                    >
+                                        e-Money
+                                    </label>
+                                </div>
+
+                                <div className="flex h-[52px] items-center gap-[15px] rounded-md border border-grey_stroke px-[15px] text-start has-[:checked]:border-primary">
+                                    <RadioGroup.Item
+                                        id="cash_on_delivery"
+                                        value="cash_on_delivery"
+                                        className="h-[20px] w-[20px] cursor-default rounded-full border border-grey_stroke bg-white outline-none"
+                                    >
+                                        <RadioGroup.Indicator className="relative flex h-full w-full items-center justify-center after:block after:h-[10px] after:w-[10px] after:rounded-[50%] after:bg-primary after:content-['']" />
+                                    </RadioGroup.Item>
+                                    <label
+                                        className="flex-1 text-s3"
+                                        htmlFor="cash_on_delivery"
+                                    >
+                                        Cash on Delivery
+                                    </label>
+                                </div>
+                            </RadioGroup.Root>
+                        </div>
+                    </div>
+
+                    <div className="grid gap-[24px] sm:grid-cols-2 sm:gap-x-[16px] sm:gap-y-[24px]">
+                        <label htmlFor="money_number">
+                            <div className="mb-[7px] flex justify-between">
+                                <p
+                                    className={`text-s1 font-bold ${errors?.money_number && "text-error"}`}
+                                >
+                                    e-Money Number
+                                </p>
+                                {errors?.money_number && (
+                                    <p className="text-s1 font-medium text-error">
+                                        {errors.money_number.message}
+                                    </p>
+                                )}
+                            </div>
+                            <input
+                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.money_number ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
+                                type="text"
+                                {...register("money_number", {
+                                    valueAsNumber: true
+                                })}
+                                placeholder="238521993"
+                            />
+                        </label>
+
+                        <label htmlFor="money_pin">
+                            <div className="mb-[7px] flex justify-between">
+                                <p
+                                    className={`text-s1 font-bold ${errors?.money_pin && "text-error"}`}
+                                >
+                                    e-Money PIN
+                                </p>
+                                {errors?.money_pin && (
+                                    <p className="text-s1 font-medium text-error">
+                                        {errors.money_pin.message}
+                                    </p>
+                                )}
+                            </div>
+                            <input
+                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.money_pin ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
+                                type="text"
+                                {...register("money_pin", {
+                                    valueAsNumber: true
+                                })}
+                                placeholder="6891"
+                            />
+                        </label>
+                    </div>
                 </div>
 
-                <button
-                    type="submit"
-                    className="btn btn_primary w-full justify-center text-white"
-                >
-                    Continue & Pay
-                </button>
-            </div>
-        </form>
+                <div className="mb-[97px] rounded-lg bg-white px-[24px] py-[32px] sm:mb-[116px] sm:px-[32px] md:basis-[350px] md:self-start">
+                    <p className="mb-[33px] text-s5 font-bold uppercase">
+                        Summary
+                    </p>
+                    {cart && <CartItemList cart={cart} read_only />}
+                    <div className="mb-[6px] flex items-center justify-between">
+                        <span className="text-s4 uppercase opacity-50">
+                            Total
+                        </span>
+                        <span className="text-s5 font-bold">
+                            $ {total?.toLocaleString()}
+                        </span>
+                    </div>
+                    <div className="mb-[6px] flex items-center justify-between">
+                        <span className="text-s4 uppercase opacity-50">
+                            Shipping
+                        </span>
+                        <span className="text-s5 font-bold">$ 50</span>
+                    </div>
+                    <div className="mb-[22px] flex items-center justify-between">
+                        <span className="text-s4 uppercase opacity-50">
+                            Vat (included)
+                        </span>
+                        <span className="text-s5 font-bold">
+                            $ {vat.toLocaleString()}
+                        </span>
+                    </div>
+                    <div className="mb-[30px] flex items-center justify-between">
+                        <span className="text-s4 uppercase opacity-50">
+                            Grand total
+                        </span>
+                        <span className="text-s5 font-bold text-primary">
+                            ${total && (total + 50).toLocaleString()}
+                        </span>
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="btn btn_primary w-full justify-center text-white"
+                    >
+                        Continue & Pay
+                    </button>
+                </div>
+            </form>
+            <CheckoutDialog
+                open={isShowCheckoutModal}
+                checkoutInfo={checkoutInfo}
+            />
+        </>
     );
 };
 
