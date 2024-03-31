@@ -2,6 +2,7 @@ import CartIcon from "@/public/images/icon/icon-cart.svg";
 import * as Dialog from "@radix-ui/react-dialog";
 import { getCart, removeAllItem } from "../_hooks/useCart";
 import CartItemList from "./CartItemList";
+import Link from "next/link";
 interface Cart {
     id: number;
     image: string;
@@ -56,13 +57,15 @@ const Cart = () => {
                                 .toLocaleString()}
                         </p>
                     </div>
-
-                    <button
-                        type="button"
-                        className="btn btn_primary w-full justify-center text-white"
-                    >
-                        Checkout
-                    </button>
+                    <Dialog.Close asChild>
+                        <Link
+                            type="button"
+                            className="btn btn_primary w-full justify-center text-white"
+                            href={"/checkout"}
+                        >
+                            Checkout
+                        </Link>
+                    </Dialog.Close>
                 </Dialog.Content>
             </Dialog.Portal>
         </Dialog.Root>

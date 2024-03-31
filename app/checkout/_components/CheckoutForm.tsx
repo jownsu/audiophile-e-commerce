@@ -1,7 +1,7 @@
 "use client";
 
 import * as RadioGroup from "@radix-ui/react-radio-group";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { getCart } from "@/app/_hooks/useCart";
@@ -29,10 +29,13 @@ const CheckoutForm = () => {
         register,
         handleSubmit,
         setValue,
-        getValues,
+        watch,
         formState: { errors }
     } = useForm<CheckForm>({
-        resolver: zodResolver(schema)
+        resolver: zodResolver(schema),
+        defaultValues: {
+            payment_method: "e_money"
+        }
     });
 
     let total = cart?.reduce(
@@ -43,10 +46,12 @@ const CheckoutForm = () => {
 
     if (total) vat = total * 0.25;
 
+    const onSubmit: SubmitHandler<CheckForm> = (data) => console.log(data)
+
     return (
         <form
             className="flex flex-col gap-[32px] md:mb-[141px] md:flex-row md:gap-[30px]"
-            onSubmit={handleSubmit((data) => console.log(data))}
+            onSubmit={handleSubmit(onSubmit)}
         >
             <div className="rounded-lg bg-white p-[24px] sm:py-[30px] md:flex-1 md:p-[48px]">
                 <p className="mb-[33px] text-s8 font-bold uppercase sm:mb-[40px]">
@@ -73,7 +78,7 @@ const CheckoutForm = () => {
                                 )}
                             </div>
                             <input
-                                className={`h-[56px] w-full rounded-lg border border-grey_stroke px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.name && "border-2 border-error focus:outline-error"}`}
+                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.name ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
                                 type="text"
                                 {...register("name")}
                                 placeholder="Alexei Ward"
@@ -94,7 +99,7 @@ const CheckoutForm = () => {
                                 )}
                             </div>
                             <input
-                                className={`h-[56px] w-full rounded-lg border border-grey_stroke px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.email && "border-2 border-error focus:outline-error"}`}
+                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.email ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
                                 type="email"
                                 {...register("email")}
                                 placeholder="alexei@mail.com"
@@ -115,7 +120,7 @@ const CheckoutForm = () => {
                                 )}
                             </div>
                             <input
-                                className={`h-[56px] w-full rounded-lg border border-grey_stroke px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.phone && "border-2 border-error focus:outline-error"}`}
+                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.phone ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
                                 type="text"
                                 {...register("phone")}
                                 placeholder="+1 202-555-0136"
@@ -144,7 +149,7 @@ const CheckoutForm = () => {
                                 )}
                             </div>
                             <input
-                                className={`h-[56px] w-full rounded-lg border border-grey_stroke px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.address && "border-2 border-error focus:outline-error"}`}
+                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.address ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
                                 type="text"
                                 {...register("address")}
                                 placeholder="1137 Williams Avenue"
@@ -165,10 +170,31 @@ const CheckoutForm = () => {
                                 )}
                             </div>
                             <input
-                                className={`h-[56px] w-full rounded-lg border border-grey_stroke px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.zip_code && "border-2 border-error focus:outline-error"}`}
+                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.zip_code ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
                                 type="text"
                                 {...register("zip_code")}
                                 placeholder="10001"
+                            />
+                        </label>
+
+                        <label htmlFor="city">
+                            <div className="mb-[7px] flex justify-between">
+                                <p
+                                    className={`text-s1 font-bold ${errors?.city && "text-error"}`}
+                                >
+                                    City
+                                </p>
+                                {errors?.city && (
+                                    <p className="text-s1 font-medium text-error">
+                                        {errors.city.message}
+                                    </p>
+                                )}
+                            </div>
+                            <input
+                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.city ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
+                                type="text"
+                                {...register("city")}
+                                placeholder="New York"
                             />
                         </label>
 
@@ -186,7 +212,7 @@ const CheckoutForm = () => {
                                 )}
                             </div>
                             <input
-                                className={`h-[56px] w-full rounded-lg border border-grey_stroke px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.country && "border-2 border-error focus:outline-error"}`}
+                                className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.country ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
                                 type="text"
                                 {...register("country")}
                                 placeholder="10001"
@@ -204,8 +230,7 @@ const CheckoutForm = () => {
                         <p className="text-s1 font-bold">Payment Method</p>
                         <RadioGroup.Root
                             className="flex flex-col gap-[16px] font-bold"
-                            value={getValues("payment_method")}
-                            defaultValue="e_money"
+                            value={watch("payment_method")}
                             onValueChange={(value) =>
                                 setValue("payment_method", value)
                             }
@@ -260,7 +285,7 @@ const CheckoutForm = () => {
                             )}
                         </div>
                         <input
-                            className={`h-[56px] w-full rounded-lg border border-grey_stroke px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.money_number && "border-2 border-error focus:outline-error"}`}
+                            className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.money_number ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
                             type="text"
                             {...register("money_number", {
                                 valueAsNumber: true
@@ -283,7 +308,7 @@ const CheckoutForm = () => {
                             )}
                         </div>
                         <input
-                            className={`h-[56px] w-full rounded-lg border border-grey_stroke px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.money_pin && "border-2 border-error focus:outline-error"}`}
+                            className={`h-[56px] w-full rounded-lg px-[24px] text-s3 font-bold text-black placeholder:text-opacity-40 ${errors?.money_pin ? "border-2 border-error focus:outline-error" : "border border-grey_stroke"}`}
                             type="text"
                             {...register("money_pin", {
                                 valueAsNumber: true
