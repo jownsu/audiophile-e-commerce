@@ -9,7 +9,7 @@ interface Props {
 }
 
 const CategoryPage = async ({ params }: Props) => {
-    const res = await fetch(`http://localhost:3000/api/categories/${params.slug}`);
+    const res = await fetch(`${process.env.NEXT_URL}/api/categories/${params.slug}`);
     const products: Product[] = await res.json();
 
     return (

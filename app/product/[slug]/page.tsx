@@ -12,7 +12,7 @@ interface Props {
 
 const ProductPage = async ({ params }: Props) => {
     const res = await fetch(
-        `http://localhost:3000/api/products/${params.slug}`
+        `${process.env.NEXT_URL}/api/products/${params.slug}`
     );
     const product: Product = await res.json();
     return (
