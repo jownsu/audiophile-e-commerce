@@ -1,4 +1,5 @@
-import { Box, Text } from "@radix-ui/themes";
+import { Text } from "@radix-ui/themes";
+import Image from "next/image";
 import Link from "next/link";
 
 interface Props {
@@ -11,7 +12,9 @@ const LinkCard = ({ link }: Props) => {
             className="group relative flex h-[165px] flex-col items-center justify-end rounded-md bg-grey p-[22px] md:h-[204px]"
             href={link.href}
         >
-            <img
+            <Image
+                height={150}
+                width={150}
                 src={link.image}
                 alt={`Picture of ${link.label}`}
                 className="absolute top-[-35%] w-[140px] object-contain md:w-[215px]"
@@ -21,7 +24,10 @@ const LinkCard = ({ link }: Props) => {
             </Text>
             <Text className="flex items-center gap-3 text-s2 font-semibold text-black text-opacity-50 duration-200 group-hover:text-primary">
                 SHOP{" "}
-                <img
+                <Image
+                    height={12}
+                    width={8}
+                    objectFit="contain"
                     src="/images/icon/icon-arrow-right.svg"
                     alt="right icon"
                     className="inline-block"

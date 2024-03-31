@@ -3,7 +3,7 @@
 import ProductQuantity from "@/app/_components/ProductQuantity";
 import { Product } from "@/entities/Product";
 import React, { useState } from "react";
-import { addItem } from "@/app/_hooks/useCart";
+import { useAddItem } from "@/app/_hooks/useCart";
 
 interface Props {
     product: Product;
@@ -11,7 +11,7 @@ interface Props {
 
 const ProductItem = ({ product }: Props) => {
     const [quantity, setQuantity] = useState(1);
-    const { mutate: addCartItem } = addItem();
+    const { mutate: addCartItem } = useAddItem();
 
     const handleAddToCart = () => {
         addCartItem({

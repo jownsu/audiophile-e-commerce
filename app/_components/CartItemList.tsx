@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { removeItem, updateItem } from "../_hooks/useCart";
+import { useRemoveItem, useUpdateItem } from "../_hooks/useCart";
 import Cart from "./Cart";
 import ProductQuantity from "./ProductQuantity";
 
@@ -9,8 +9,8 @@ interface Props {
 }
 
 const CartItemList = ({ cart, read_only = false }: Props) => {
-    const { mutate: updateCartItem } = updateItem();
-    const { mutate: deleteCartItem } = removeItem();
+    const { mutate: updateCartItem } = useUpdateItem();
+    const { mutate: deleteCartItem } = useRemoveItem();
 
     return (
         <ul className="mb-[32px] flex flex-col gap-[24px]">

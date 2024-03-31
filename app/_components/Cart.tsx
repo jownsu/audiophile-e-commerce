@@ -1,6 +1,6 @@
 import CartIcon from "@/public/images/icon/icon-cart.svg";
 import * as Dialog from "@radix-ui/react-dialog";
-import { getCart, removeAllItem } from "../_hooks/useCart";
+import { useGetItem, useRemoveAllItem } from "../_hooks/useCart";
 import CartItemList from "./CartItemList";
 import Link from "next/link";
 interface Cart {
@@ -12,8 +12,8 @@ interface Cart {
 }
 
 const Cart = () => {
-    const { data: cart } = getCart();
-    const { mutate: removeAllCartItems } = removeAllItem();
+    const { data: cart } = useGetItem();
+    const { mutate: removeAllCartItems } = useRemoveAllItem();
 
     return (
         <Dialog.Root>

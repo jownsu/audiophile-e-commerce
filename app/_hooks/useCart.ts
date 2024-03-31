@@ -7,7 +7,7 @@ interface AddCartItem {
     quantity: number;
 }
 
-export const getCart = () =>
+export const useGetItem = () =>
     useQuery({
         queryKey: ["cart"],
         queryFn: () => axios.get<Cart[]>("/api/cart").then((res) => res.data),
@@ -15,7 +15,7 @@ export const getCart = () =>
         retry: 3
     });
 
-export const removeAllItem = () => {
+export const useRemoveAllItem = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
@@ -29,7 +29,7 @@ export const removeAllItem = () => {
     });
 };
 
-export const updateItem = () => {
+export const useUpdateItem = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
@@ -48,7 +48,7 @@ export const updateItem = () => {
     });
 };
 
-export const removeItem = () => {
+export const useRemoveItem = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
@@ -64,7 +64,7 @@ export const removeItem = () => {
     });
 };
 
-export const addItem = () => {
+export const useAddItem = () => {
     const queryClient = useQueryClient();
 
     return useMutation({

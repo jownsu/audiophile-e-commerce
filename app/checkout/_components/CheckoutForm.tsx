@@ -1,7 +1,7 @@
 "use client";
 
 import CartItemList from "@/app/_components/CartItemList";
-import { getCart, removeAllItem } from "@/app/_hooks/useCart";
+import { useGetItem, useRemoveAllItem } from "@/app/_hooks/useCart";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { useState } from "react";
@@ -25,8 +25,8 @@ const schema = z.object({
 type CheckForm = z.infer<typeof schema>;
 
 const CheckoutForm = () => {
-    const { data: cart } = getCart();
-    const { mutate: removeAllCartItems } = removeAllItem();
+    const { data: cart } = useGetItem();
+    const { mutate: removeAllCartItems } = useRemoveAllItem();
     const [isShowCheckoutModal, setShowCheckoutModal] = useState(false);
     const [checkoutInfo, setCheckoutInfo] = useState<CheckoutInfo | undefined>();
 

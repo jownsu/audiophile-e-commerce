@@ -46,10 +46,10 @@ const Footer = () => {
                     <NavLinks className="space-y-2 text-center sm:col-span-3 sm:flex sm:gap-x-5 sm:space-y-0 sm:text-start md:col-span-1 md:justify-end" />
                     <Text className="text-center text-s4 font-normal opacity-50 sm:col-span-3 sm:text-start md:col-span-1">
                         Audiophile is an all in one stop to fulfill your audio
-                        needs. We're a small team of music lovers and sound
+                        needs. We&apos;re a small team of music lovers and sound
                         specialists who are devoted to helping you get the most
                         out of personal audio. Come and visit our demo facility
-                        - we’re open 7 days a week.
+                        - we&apos;re open 7 days a week.
                     </Text>
                     <Text className="text-s4 font-semibold opacity-50 sm:col-span-2 sm:mt-9 md:order-2 md:col-span-1 md:mt-5">
                         Copyright 2021. All Rights Reserved

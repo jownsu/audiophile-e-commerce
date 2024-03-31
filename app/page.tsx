@@ -2,6 +2,7 @@ import { Container, Flex } from "@radix-ui/themes";
 import Link from "next/link";
 import AudioCategories from "./_components/AudioCategories";
 import AudioGear from "./_components/AudioGear";
+import Image from "next/image";
 
 export default function Home() {
     return (
@@ -62,7 +63,9 @@ export default function Home() {
                         }}
                         className="mb-5 overflow-hidden rounded-md bg-primary bg-circle_pattern bg-cover bg-[center_top_-130px] bg-no-repeat px-7 pb-[55px] pt-[62px] sm:mb-[32px] sm:pb-[64px] md:bg-[length:75%] md:bg-[position:-25%_10%] md:pb-0 md:pl-[138px] md:pr-[122px]"
                     >
-                        <img
+                        <Image
+                            height={380}
+                            width={460}
                             src="/images/speaker-zx9.png"
                             alt="Speaker"
                             className="mb-[40px] w-[172px] sm:mb-[68px] sm:w-[180px] md:mb-0 md:w-[380px] md:translate-y-4"
